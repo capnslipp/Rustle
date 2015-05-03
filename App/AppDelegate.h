@@ -1,17 +1,12 @@
-//
-//  AppDelegate.h
-//  GTCoreBluetoothDemo
-//
-//  Created by Cap'n Slipp on 5/2/15.
-//  Copyright (c) 2015 Cap'n Slipp. All rights reserved.
-//
+// GTCoreBluetoothDemo
+// @author: Slipp Douglas Thompson
 
 #import <UIKit/UIKit.h>
+
+
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
-
 @end
-

@@ -1,13 +1,10 @@
-//
-//  GameViewController.h
-//  GTCoreBluetoothDemo
-//
-
-//  Copyright (c) 2015 Cap'n Slipp. All rights reserved.
-//
+// GTCoreBluetoothDemo
+// @author: Slipp Douglas Thompson
 
 #import <UIKit/UIKit.h>
 #import <SceneKit/SceneKit.h>
+
+
 
 @interface GameViewController : UIViewController
 
