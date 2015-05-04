@@ -59,7 +59,7 @@
 	scnView.backgroundColor = [UIColor blackColor];
 	
 	// add a tap gesture recognizer
-	UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
+	UITapGestureRecognizer *tapGesture = [[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)] autorelease];
 	NSMutableArray *gestureRecognizers = [NSMutableArray array];
 	[gestureRecognizers addObject:tapGesture];
 	[gestureRecognizers addObjectsFromArray:scnView.gestureRecognizers];
