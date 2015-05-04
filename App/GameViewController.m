@@ -13,7 +13,7 @@
 	[super viewDidLoad];
 	
 	// create a new scene
-	SCNScene *scene = [SCNScene sceneNamed:@"art.scnassets/ship.dae"];
+	SCNScene *scene = [SCNScene scene];
 	
 	// create and add a camera to the scene
 	SCNNode *cameraNode = [SCNNode node];
@@ -36,12 +36,6 @@
 	ambientLightNode.light.type = SCNLightTypeAmbient;
 	ambientLightNode.light.color = [UIColor darkGrayColor];
 	[scene.rootNode addChildNode:ambientLightNode];
-	
-	// retrieve the ship node
-	SCNNode *ship = [scene.rootNode childNodeWithName:@"ship" recursively:YES];
-	
-	// animate the 3d object
-	[ship runAction:[SCNAction repeatActionForever:[SCNAction rotateByX:0 y:2 z:0 duration:1]]];
 	
 	// retrieve the SCNView
 	SCNView *scnView = (SCNView *)self.view;
