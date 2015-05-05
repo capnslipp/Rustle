@@ -1,1 +1,10 @@
+PODS:
+  - MAZeroingWeakRef (1.0)
+
+DEPENDENCIES:
+  - MAZeroingWeakRef
+
+SPEC CHECKSUMS:
+  MAZeroingWeakRef: 8f128c1adc90e0581d4a212c6568a8e0ebba6cf1
+
 COCOAPODS: 0.37.0

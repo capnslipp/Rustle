@@ -1,0 +1,1 @@
+../../../MAZeroingWeakRef/Source/MAWeakArray.h
