@@ -7,6 +7,12 @@
 
 
 
+#pragma mark - Constants
+
+static NSString *const kAppName = @"Rustle";
+
+
+
 #pragma mark - Helper Functions
 
 NSUInteger innermostIndexOfIndexPath(NSIndexPath *indexPath)
@@ -46,6 +52,10 @@ NSException *exceptionForOutOfRangeInnermostIndexPath(NSIndexPath *indexPath, NS
 
 - (void)askForTwitterAcountFrom:(NSArray *)twitterAccounts;
 - (void)initiateLoginWithAccount:(ACAccount *)twitterAccount;
+
+- (void)presentTwitterAccessNotGrantedAlert;
+- (void)presentNoTwitterAccountsAlert;
+- (void)presentSettingsDirectingAlertWithMessage:(NSString *)message;
 
 @end
 
@@ -99,11 +109,13 @@ NSException *exceptionForOutOfRangeInnermostIndexPath(NSIndexPath *indexPath, NS
 	[accountStore requestAccessToAccountsWithType:twitterAccountType
 		options:nil
 		completion:^(BOOL granted, NSError *error) {
-			if (!granted)
-				return;
-			
-			NSArray *twitterAccounts = [accountStore accountsWithAccountType:twitterAccountType];
-			[self askForTwitterAcountFrom:twitterAccounts];
+			if (!granted) {
+				[self presentTwitterAccessNotGrantedAlert];
+			}
+			else {
+				NSArray *twitterAccounts = [accountStore accountsWithAccountType:twitterAccountType];
+				[self askForTwitterAcountFrom:twitterAccounts];
+			}
 		}
 	];
 }
@@ -113,19 +125,7 @@ NSException *exceptionForOutOfRangeInnermostIndexPath(NSIndexPath *indexPath, NS
 	NSUInteger accountCount = twitterAccounts.count;
 	
 	if (accountCount == 0) {
-		UIAlertController *errorAlert = [UIAlertController alertControllerWithTitle:@"No Twitter Accounts"
-			message:@"No Twitter accounts are set up.  Go to the Settings and git'r'done!"
-			preferredStyle:UIAlertControllerStyleAlert];
-		
-		void(^doPresentAlert)() = ^{
-			[self presentViewController:errorAlert animated:YES completion:nil];
-		};
-		
-		[errorAlert addAction:[UIAlertAction actionWithTitle:@"Will Do" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-			[errorAlert dismissViewControllerAnimated:YES completion:nil];
-		}]];
-		
-		doPresentAlert();
+		[self presentNoTwitterAccountsAlert];
 	}
 	else if (accountCount == 1) {
 		[self initiateLoginWithAccount:twitterAccounts[0]];
@@ -140,6 +140,43 @@ NSException *exceptionForOutOfRangeInnermostIndexPath(NSIndexPath *indexPath, NS
 - (void)initiateLoginWithAccount:(ACAccount *)twitterAccount
 {
 	NSLog(@"Using twitter account: %@", twitterAccount);
+}
+
+
+#pragma mark Alerts
+
+- (void)presentTwitterAccessNotGrantedAlert {
+	[self presentSettingsDirectingAlertWithTitle:@"Twitter Account Access Denied"
+		message:[NSString stringWithFormat:@"%@ requires access to a Twitter account for indentification." @"\n\n"
+			@"%@ does not use any information from Twitter other than your username, and %@ will no post anything to Twitter." @"\n\n"
+			@"Please use the Settings app to allow Twitter accounts on this device.",
+		kAppName, kAppName, kAppName
+	]];
+}
+
+- (void)presentNoTwitterAccountsAlert {
+	[self presentSettingsDirectingAlertWithTitle:@"No Twitter Accounts Found"
+		message:@"No Twitter accounts are set up."  @"\n\n"
+			@"Please use the Settings app to add a Twitter account."
+	];
+}
+
+- (void)presentSettingsDirectingAlertWithTitle:(NSString *)title message:(NSString *)message
+{
+	UIAlertController *errorAlert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+	
+	void(^doPresentAlert)() = ^{
+		[self presentViewController:errorAlert animated:YES completion:nil];
+	};
+	
+	[errorAlert addAction:[UIAlertAction actionWithTitle:@"Dismiss" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+		[errorAlert dismissViewControllerAnimated:YES completion:nil];
+	}]];
+	[errorAlert addAction:[UIAlertAction actionWithTitle:@"iOS Settings" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+		[UIApplication.sharedApplication openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
+	}]];
+	
+	doPresentAlert();
 }
 
 
