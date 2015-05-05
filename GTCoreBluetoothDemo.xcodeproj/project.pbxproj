@@ -27,7 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D442C7E31AF5A5D500FF5FF8 /* GTCoreBluetoothDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GTCoreBluetoothDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D442C7E31AF5A5D500FF5FF8 /* Rustle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rustle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D442C7E71AF5A5D500FF5FF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D442C7E81AF5A5D500FF5FF8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D442C7EA1AF5A5D500FF5FF8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -72,7 +72,7 @@
 		D442C7E41AF5A5D500FF5FF8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D442C7E31AF5A5D500FF5FF8 /* GTCoreBluetoothDemo.app */,
+				D442C7E31AF5A5D500FF5FF8 /* Rustle.app */,
 				D442C7FE1AF5A5D600FF5FF8 /* GTCoreBluetoothDemoTests.xctest */,
 			);
 			name = Products;
@@ -136,7 +136,7 @@
 			);
 			name = GTCoreBluetoothDemo;
 			productName = GTCoreBluetoothDemo;
-			productReference = D442C7E31AF5A5D500FF5FF8 /* GTCoreBluetoothDemo.app */;
+			productReference = D442C7E31AF5A5D500FF5FF8 /* Rustle.app */;
 			productType = "com.apple.product-type.application";
 		};
 		D442C7FD1AF5A5D600FF5FF8 /* GTCoreBluetoothDemoTests */ = {
@@ -351,7 +351,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Rustle;
 			};
 			name = Debug;
 		};
@@ -361,7 +361,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Rustle;
 			};
 			name = Release;
 		};
