@@ -15,7 +15,7 @@
 		D442C7F61AF5A5D600FF5FF8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D442C7F51AF5A5D600FF5FF8 /* Images.xcassets */; };
 		D442C7F91AF5A5D600FF5FF8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D442C7F71AF5A5D600FF5FF8 /* LaunchScreen.xib */; };
 		D4AFE1B91AF7362E004AD3DE /* TitleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4AFE1B81AF7362E004AD3DE /* TitleViewController.m */; };
-		D4DF600C1AF8970E00887336 /* GTCoreBluetoothDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D4DF600B1AF8970E00887336 /* GTCoreBluetoothDemo.xcdatamodeld */; };
+		D4BD7FCE1AF9851900A515ED /* GTCoreBluetoothDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D4BD7FCC1AF9851900A515ED /* GTCoreBluetoothDemo.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +37,7 @@
 		D4AFE1B71AF7362E004AD3DE /* TitleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleViewController.h; sourceTree = "<group>"; };
 		D4AFE1B81AF7362E004AD3DE /* TitleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitleViewController.m; sourceTree = "<group>"; };
 		D4AFE1BA1AF74124004AD3DE /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
-		D4DF600B1AF8970E00887336 /* GTCoreBluetoothDemo.xcdatamodeld */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodeld; path = GTCoreBluetoothDemo.xcdatamodeld; sourceTree = "<group>"; };
+		D4BD7FCD1AF9851900A515ED /* GTCoreBluetoothDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GTCoreBluetoothDemo.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +95,7 @@
 				D442C7EB1AF5A5D500FF5FF8 /* AppDelegate.m */,
 				D442C7EF1AF5A5D600FF5FF8 /* GameViewController.h */,
 				D442C7F01AF5A5D600FF5FF8 /* GameViewController.m */,
-				D4DF600B1AF8970E00887336 /* GTCoreBluetoothDemo.xcdatamodeld */,
+				D4BD7FCC1AF9851900A515ED /* GTCoreBluetoothDemo.xcdatamodeld */,
 				D442C7F51AF5A5D600FF5FF8 /* Images.xcassets */,
 				D442C7F71AF5A5D600FF5FF8 /* LaunchScreen.xib */,
 				D442C7F21AF5A5D600FF5FF8 /* Main.storyboard */,
@@ -238,9 +238,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4DF600C1AF8970E00887336 /* GTCoreBluetoothDemo.xcdatamodeld in Sources */,
 				D442C7EC1AF5A5D500FF5FF8 /* AppDelegate.m in Sources */,
 				D4AFE1B91AF7362E004AD3DE /* TitleViewController.m in Sources */,
+				D4BD7FCE1AF9851900A515ED /* GTCoreBluetoothDemo.xcdatamodeld in Sources */,
 				D442C7F11AF5A5D600FF5FF8 /* GameViewController.m in Sources */,
 				D442C7E91AF5A5D500FF5FF8 /* main.m in Sources */,
 			);
@@ -396,6 +396,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D4BD7FCC1AF9851900A515ED /* GTCoreBluetoothDemo.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D4BD7FCD1AF9851900A515ED /* GTCoreBluetoothDemo.xcdatamodel */,
+			);
+			currentVersion = D4BD7FCD1AF9851900A515ED /* GTCoreBluetoothDemo.xcdatamodel */;
+			path = GTCoreBluetoothDemo.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = D442C7DB1AF5A5D500FF5FF8 /* Project object */;
 }
