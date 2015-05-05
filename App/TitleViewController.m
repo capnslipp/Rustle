@@ -47,7 +47,7 @@ NSException *exceptionForOutOfRangeInnermostIndexPath(NSIndexPath *indexPath, NS
 
 @interface TitleViewController ()
 
-@property(assign, nonatomic) UITableViewController *twitterPopoverController;
+@property(assign, nonatomic) UITableViewController *twitterTableController;
 @property(retain, nonatomic) NSArray *twitterAccountsForPopover;
 
 - (void)askForTwitterAcountFrom:(NSArray *)twitterAccounts;
@@ -188,7 +188,7 @@ NSException *exceptionForOutOfRangeInnermostIndexPath(NSIndexPath *indexPath, NS
 		UITableViewController *destController = segue.destinationViewController;
 		destController.tableView.dataSource = self;
 		destController.tableView.delegate = self;
-		self.twitterPopoverController = destController;
+		self.twitterTableController = destController;
 	}
 }
 
@@ -200,7 +200,7 @@ NSException *exceptionForOutOfRangeInnermostIndexPath(NSIndexPath *indexPath, NS
 	if (!tableView)
 		return 0;
 	
-	if (tableView == self.twitterPopoverController.tableView)
+	if (tableView == self.twitterTableController.tableView)
 	{
 		switch (section) {
 			case 0:
@@ -219,7 +219,7 @@ NSException *exceptionForOutOfRangeInnermostIndexPath(NSIndexPath *indexPath, NS
 	if (!tableView)
 		return nil;
 	
-	if (tableView == self.twitterPopoverController.tableView)
+	if (tableView == self.twitterTableController.tableView)
 	{
 		NSArray *twitterAccounts = self.twitterAccountsForPopover;
 		
@@ -242,7 +242,7 @@ NSException *exceptionForOutOfRangeInnermostIndexPath(NSIndexPath *indexPath, NS
 	if (!tableView)
 		return;
 	
-	if (tableView == self.twitterPopoverController.tableView)
+	if (tableView == self.twitterTableController.tableView)
 	{
 		NSArray *twitterAccounts = self.twitterAccountsForPopover;
 		
@@ -252,8 +252,8 @@ NSException *exceptionForOutOfRangeInnermostIndexPath(NSIndexPath *indexPath, NS
 		
 		ACAccount *twitterAccount = twitterAccounts[innermostIndex];
 		
-		[self.twitterPopoverController dismissViewControllerAnimated:YES completion:nil];
-		self.twitterPopoverController = nil;
+		[self.twitterTableController dismissViewControllerAnimated:YES completion:nil];
+		self.twitterTableController = nil;
 		
 		[self initiateLoginWithAccount:twitterAccount];
 	}
