@@ -1,12 +1,12 @@
 // GTCoreBluetoothDemo
 // @author: Slipp Douglas Thompson
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 
 
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
-@property (retain, nonatomic) UIWindow *window;
+@property(retain, nonatomic) UIWindow *window;
 
 @end
