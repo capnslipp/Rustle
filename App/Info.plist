@@ -28,6 +28,7 @@
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
+		<string>bluetooth-le</string>
 	</array>
 	<key>UIStatusBarHidden</key>
 	<true/>
