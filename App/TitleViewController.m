@@ -42,7 +42,7 @@ NSException *exceptionForOutOfRangeInnermostIndexPath(NSIndexPath *indexPath, NS
 @interface TitleViewController ()
 
 @property(assign, nonatomic) UITableViewController *twitterPopoverController;
-@property(retain, nonatomic) NSArray *twitterAccounts;
+@property(retain, nonatomic) NSArray *twitterAccountsForPopover;
 
 - (void)askForTwitterAcountFrom:(NSArray *)twitterAccounts;
 - (void)initiateLoginWithAccount:(ACAccount *)twitterAccount;
@@ -127,11 +127,11 @@ NSException *exceptionForOutOfRangeInnermostIndexPath(NSIndexPath *indexPath, NS
 		
 		doPresentAlert();
 	}
-	else if	(accountCount == 1) {
-		[self initiateLoginWithAccount:self.twitterAccounts[0]];
+	else if (accountCount == 1) {
+		[self initiateLoginWithAccount:twitterAccounts[0]];
 	}
-	else {
-		self.twitterAccounts = twitterAccounts; // for later use by `tableView:numberOfRowsInSection:`, `tableView:cellForRowAtIndexPath:`, `tableView:didSelectRowAtIndexPath:`
+	else { // accountCount ≥ 2
+		self.twitterAccountsForPopover = twitterAccounts; // for later use by `tableView:numberOfRowsInSection:`, `tableView:cellForRowAtIndexPath:`, `tableView:didSelectRowAtIndexPath:`
 		
 		[self performSegueWithIdentifier:self.twitterPopoverSequeID sender:self];
 	}
@@ -167,7 +167,7 @@ NSException *exceptionForOutOfRangeInnermostIndexPath(NSIndexPath *indexPath, NS
 	{
 		switch (section) {
 			case 0:
-				return self.twitterAccounts.count;
+				return self.twitterAccountsForPopover.count;
 			
 			default:
 				return 0;
@@ -184,7 +184,7 @@ NSException *exceptionForOutOfRangeInnermostIndexPath(NSIndexPath *indexPath, NS
 	
 	if (tableView == self.twitterPopoverController.tableView)
 	{
-		NSArray *twitterAccounts = self.twitterAccounts;
+		NSArray *twitterAccounts = self.twitterAccountsForPopover;
 		
 		NSUInteger innermostIndex = innermostIndexOfIndexPath(indexPath);
 		if (innermostIndex >= twitterAccounts.count)
@@ -207,7 +207,7 @@ NSException *exceptionForOutOfRangeInnermostIndexPath(NSIndexPath *indexPath, NS
 	
 	if (tableView == self.twitterPopoverController.tableView)
 	{
-		NSArray *twitterAccounts = self.twitterAccounts;
+		NSArray *twitterAccounts = self.twitterAccountsForPopover;
 		
 		NSUInteger innermostIndex = innermostIndexOfIndexPath(indexPath);
 		if (innermostIndex >= twitterAccounts.count)
