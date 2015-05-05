@@ -55,7 +55,7 @@ NSException *exceptionForOutOfRangeInnermostIndexPath(NSIndexPath *indexPath, NS
 
 - (void)presentTwitterAccessNotGrantedAlert;
 - (void)presentNoTwitterAccountsAlert;
-- (void)presentSettingsDirectingAlertWithMessage:(NSString *)message;
+- (void)presentSettingsDirectingAlertWithTitle:(NSString *)title message:(NSString *)message;
 
 @end
 
