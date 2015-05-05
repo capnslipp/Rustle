@@ -13,19 +13,8 @@
 		D442C7F41AF5A5D600FF5FF8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D442C7F21AF5A5D600FF5FF8 /* Main.storyboard */; };
 		D442C7F61AF5A5D600FF5FF8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D442C7F51AF5A5D600FF5FF8 /* Images.xcassets */; };
 		D442C7F91AF5A5D600FF5FF8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D442C7F71AF5A5D600FF5FF8 /* LaunchScreen.xib */; };
-		D442C8051AF5A5D600FF5FF8 /* GTCoreBluetoothDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D442C8041AF5A5D600FF5FF8 /* GTCoreBluetoothDemoTests.m */; };
 		D4AFE1B91AF7362E004AD3DE /* TitleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4AFE1B81AF7362E004AD3DE /* TitleViewController.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		D442C7FF1AF5A5D600FF5FF8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D442C7DB1AF5A5D500FF5FF8 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D442C7E21AF5A5D500FF5FF8;
-			remoteInfo = GTCoreBluetoothDemo;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		D442C7E31AF5A5D500FF5FF8 /* Rustle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rustle.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,7 +27,6 @@
 		D442C7F31AF5A5D600FF5FF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D442C7F51AF5A5D600FF5FF8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D442C7F81AF5A5D600FF5FF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		D442C7FE1AF5A5D600FF5FF8 /* GTCoreBluetoothDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GTCoreBluetoothDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D442C8031AF5A5D600FF5FF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D442C8041AF5A5D600FF5FF8 /* GTCoreBluetoothDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTCoreBluetoothDemoTests.m; sourceTree = "<group>"; };
 		D4AFE1B71AF7362E004AD3DE /* TitleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleViewController.h; sourceTree = "<group>"; };
@@ -48,13 +36,6 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		D442C7E01AF5A5D500FF5FF8 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D442C7FB1AF5A5D600FF5FF8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -77,7 +58,6 @@
 			isa = PBXGroup;
 			children = (
 				D442C7E31AF5A5D500FF5FF8 /* Rustle.app */,
-				D442C7FE1AF5A5D600FF5FF8 /* GTCoreBluetoothDemoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -146,24 +126,6 @@
 			productReference = D442C7E31AF5A5D500FF5FF8 /* Rustle.app */;
 			productType = "com.apple.product-type.application";
 		};
-		D442C7FD1AF5A5D600FF5FF8 /* GTCoreBluetoothDemoTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D442C80B1AF5A5D600FF5FF8 /* Build configuration list for PBXNativeTarget "GTCoreBluetoothDemoTests" */;
-			buildPhases = (
-				D442C7FA1AF5A5D600FF5FF8 /* Sources */,
-				D442C7FB1AF5A5D600FF5FF8 /* Frameworks */,
-				D442C7FC1AF5A5D600FF5FF8 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				D442C8001AF5A5D600FF5FF8 /* PBXTargetDependency */,
-			);
-			name = GTCoreBluetoothDemoTests;
-			productName = GTCoreBluetoothDemoTests;
-			productReference = D442C7FE1AF5A5D600FF5FF8 /* GTCoreBluetoothDemoTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -175,10 +137,6 @@
 				TargetAttributes = {
 					D442C7E21AF5A5D500FF5FF8 = {
 						CreatedOnToolsVersion = 6.3;
-					};
-					D442C7FD1AF5A5D600FF5FF8 = {
-						CreatedOnToolsVersion = 6.3;
-						TestTargetID = D442C7E21AF5A5D500FF5FF8;
 					};
 				};
 			};
@@ -196,7 +154,6 @@
 			projectRoot = "";
 			targets = (
 				D442C7E21AF5A5D500FF5FF8 /* GTCoreBluetoothDemo */,
-				D442C7FD1AF5A5D600FF5FF8 /* GTCoreBluetoothDemoTests */,
 			);
 		};
 /* End PBXProject section */
@@ -209,13 +166,6 @@
 				D442C7F91AF5A5D600FF5FF8 /* LaunchScreen.xib in Resources */,
 				D442C7F61AF5A5D600FF5FF8 /* Images.xcassets in Resources */,
 				D442C7F41AF5A5D600FF5FF8 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D442C7FC1AF5A5D600FF5FF8 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,23 +183,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D442C7FA1AF5A5D600FF5FF8 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D442C8051AF5A5D600FF5FF8 /* GTCoreBluetoothDemoTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		D442C8001AF5A5D600FF5FF8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = D442C7E21AF5A5D500FF5FF8 /* GTCoreBluetoothDemo */;
-			targetProxy = D442C7FF1AF5A5D600FF5FF8 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		D442C7F21AF5A5D600FF5FF8 /* Main.storyboard */ = {
@@ -375,40 +309,6 @@
 			};
 			name = Release;
 		};
-		D442C80C1AF5A5D600FF5FF8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GTCoreBluetoothDemo.app/GTCoreBluetoothDemo";
-			};
-			name = Debug;
-		};
-		D442C80D1AF5A5D600FF5FF8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GTCoreBluetoothDemo.app/GTCoreBluetoothDemo";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -426,15 +326,6 @@
 			buildConfigurations = (
 				D442C8091AF5A5D600FF5FF8 /* Debug */,
 				D442C80A1AF5A5D600FF5FF8 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D442C80B1AF5A5D600FF5FF8 /* Build configuration list for PBXNativeTarget "GTCoreBluetoothDemoTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D442C80C1AF5A5D600FF5FF8 /* Debug */,
-				D442C80D1AF5A5D600FF5FF8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
