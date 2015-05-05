@@ -85,9 +85,9 @@
 				D442C7EB1AF5A5D500FF5FF8 /* AppDelegate.m */,
 				D442C7EF1AF5A5D600FF5FF8 /* GameViewController.h */,
 				D442C7F01AF5A5D600FF5FF8 /* GameViewController.m */,
-				D442C7F21AF5A5D600FF5FF8 /* Main.storyboard */,
 				D442C7F51AF5A5D600FF5FF8 /* Images.xcassets */,
 				D442C7F71AF5A5D600FF5FF8 /* LaunchScreen.xib */,
+				D442C7F21AF5A5D600FF5FF8 /* Main.storyboard */,
 				D442C7E61AF5A5D500FF5FF8 /* supporting files */,
 			);
 			path = App;
