@@ -48,6 +48,7 @@ NSException *exceptionForOutOfRangeInnermostIndexPath(NSIndexPath *indexPath, NS
 @interface TitleViewController ()
 
 @property(assign, nonatomic) UITableViewController *twitterTableController;
+@property(assign, readonly, getter=isTwitterPopoverActive, nonatomic) BOOL twitterPopoverActive;
 @property(retain, nonatomic) NSArray *twitterAccountsForPopover;
 
 - (void)askForTwitterAcountFrom:(NSArray *)twitterAccounts;
@@ -62,6 +63,13 @@ NSException *exceptionForOutOfRangeInnermostIndexPath(NSIndexPath *indexPath, NS
 
 
 @implementation TitleViewController
+
+- (BOOL)isTwitterPopoverActive
+{
+	// @warning: Assumption that if a `twitterTableController` instance is alive, the popover is being presented.
+	// 	We might be able to do better— but Storyboards seem to use `UIPopoverPresentationController` not `UIPopoverController`, and the former doesn't give us much info to work with.
+	return (self.twitterTableController != nil);
+}
 
 @synthesize twitterPopoverSequeID=_twitterPopoverSequeID, twitterPopoverTableCellReuseID=_twitterPopoverTableCellReuseID;
 
@@ -131,9 +139,15 @@ NSException *exceptionForOutOfRangeInnermostIndexPath(NSIndexPath *indexPath, NS
 		[self initiateLoginWithAccount:twitterAccounts[0]];
 	}
 	else { // accountCount ≥ 2
+		NSString *twitterPopoverSequeID = self.twitterPopoverSequeID;
+		
+		BOOL canPerformSeque = [self shouldPerformSegueWithIdentifier:twitterPopoverSequeID sender:self];
+		if (!canPerformSeque)
+			return;
+		
 		self.twitterAccountsForPopover = twitterAccounts; // for later use by `tableView:numberOfRowsInSection:`, `tableView:cellForRowAtIndexPath:`, `tableView:didSelectRowAtIndexPath:`
 		
-		[self performSegueWithIdentifier:self.twitterPopoverSequeID sender:self];
+		[self performSegueWithIdentifier:twitterPopoverSequeID sender:self];
 	}
 }
 
@@ -182,10 +196,21 @@ NSException *exceptionForOutOfRangeInnermostIndexPath(NSIndexPath *indexPath, NS
 
 #pragma mark Navigation
 
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
+{
+	if ([identifier isEqualToString:self.twitterPopoverSequeID]) {
+		return !self.twitterPopoverActive;
+	}
+	else {
+		return [super shouldPerformSegueWithIdentifier:identifier sender:sender];
+	}
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
 	if ([segue.identifier isEqualToString:self.twitterPopoverSequeID]) {
 		UITableViewController *destController = segue.destinationViewController;
+		
 		destController.tableView.dataSource = self;
 		destController.tableView.delegate = self;
 		self.twitterTableController = destController;
