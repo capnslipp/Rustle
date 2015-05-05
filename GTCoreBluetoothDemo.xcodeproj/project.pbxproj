@@ -14,6 +14,7 @@
 		D442C7F61AF5A5D600FF5FF8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D442C7F51AF5A5D600FF5FF8 /* Images.xcassets */; };
 		D442C7F91AF5A5D600FF5FF8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D442C7F71AF5A5D600FF5FF8 /* LaunchScreen.xib */; };
 		D442C8051AF5A5D600FF5FF8 /* GTCoreBluetoothDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D442C8041AF5A5D600FF5FF8 /* GTCoreBluetoothDemoTests.m */; };
+		D4AFE1B91AF7362E004AD3DE /* TitleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4AFE1B81AF7362E004AD3DE /* TitleViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		D442C7FE1AF5A5D600FF5FF8 /* GTCoreBluetoothDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GTCoreBluetoothDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D442C8031AF5A5D600FF5FF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D442C8041AF5A5D600FF5FF8 /* GTCoreBluetoothDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTCoreBluetoothDemoTests.m; sourceTree = "<group>"; };
+		D4AFE1B71AF7362E004AD3DE /* TitleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleViewController.h; sourceTree = "<group>"; };
+		D4AFE1B81AF7362E004AD3DE /* TitleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitleViewController.m; sourceTree = "<group>"; };
 		D4AFE1BA1AF74124004AD3DE /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,6 +92,8 @@
 				D442C7F51AF5A5D600FF5FF8 /* Images.xcassets */,
 				D442C7F71AF5A5D600FF5FF8 /* LaunchScreen.xib */,
 				D442C7F21AF5A5D600FF5FF8 /* Main.storyboard */,
+				D4AFE1B71AF7362E004AD3DE /* TitleViewController.h */,
+				D4AFE1B81AF7362E004AD3DE /* TitleViewController.m */,
 				D442C7E61AF5A5D500FF5FF8 /* supporting files */,
 			);
 			path = App;
@@ -222,6 +227,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D442C7EC1AF5A5D500FF5FF8 /* AppDelegate.m in Sources */,
+				D4AFE1B91AF7362E004AD3DE /* TitleViewController.m in Sources */,
 				D442C7F11AF5A5D600FF5FF8 /* GameViewController.m in Sources */,
 				D442C7E91AF5A5D500FF5FF8 /* main.m in Sources */,
 			);
