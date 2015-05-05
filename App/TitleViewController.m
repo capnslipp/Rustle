@@ -4,6 +4,7 @@
 #import "TitleViewController.h"
 
 @import Accounts;
+#import "MAZeroingWeakRef.h"
 
 
 
@@ -45,7 +46,9 @@ NSException *exceptionForOutOfRangeInnermostIndexPath(NSIndexPath *indexPath, NS
 
 #pragma mark - Class
 
-@interface TitleViewController ()
+@interface TitleViewController () {
+	MAZeroingWeakRef *_twitterTableControllerWeakRef;
+}
 
 @property(assign, nonatomic) UITableViewController *twitterTableController;
 @property(assign, readonly, getter=isTwitterPopoverActive, nonatomic) BOOL twitterPopoverActive;
@@ -63,6 +66,20 @@ NSException *exceptionForOutOfRangeInnermostIndexPath(NSIndexPath *indexPath, NS
 
 
 @implementation TitleViewController
+
+- (UITableViewController *)twitterTableController
+{
+	if (_twitterTableControllerWeakRef == nil)
+		return nil;
+	
+	return _twitterTableControllerWeakRef.target;
+}
+- (void)setTwitterTableController:(UITableViewController *)twitterTableController
+{
+	[_twitterTableControllerWeakRef release];
+	
+	_twitterTableControllerWeakRef = [[MAZeroingWeakRef alloc] initWithTarget:twitterTableController];
+}
 
 - (BOOL)isTwitterPopoverActive
 {
