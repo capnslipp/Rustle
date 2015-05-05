@@ -40,6 +40,7 @@
 		D442C7FE1AF5A5D600FF5FF8 /* GTCoreBluetoothDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GTCoreBluetoothDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D442C8031AF5A5D600FF5FF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D442C8041AF5A5D600FF5FF8 /* GTCoreBluetoothDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTCoreBluetoothDemoTests.m; sourceTree = "<group>"; };
+		D4AFE1BA1AF74124004AD3DE /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +99,7 @@
 			children = (
 				D442C7E71AF5A5D500FF5FF8 /* Info.plist */,
 				D442C7E81AF5A5D500FF5FF8 /* main.m */,
+				D4AFE1BA1AF74124004AD3DE /* Prefix.pch */,
 			);
 			name = "supporting files";
 			sourceTree = "<group>";
@@ -349,6 +351,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = App/Prefix.pch;
 				INFOPLIST_FILE = App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = Rustle;
@@ -359,6 +362,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = App/Prefix.pch;
 				INFOPLIST_FILE = App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = Rustle;

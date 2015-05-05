@@ -1,0 +1,27 @@
+// GTCoreBluetoothDemo
+// @author: Slipp Douglas Thompson
+
+
+
+/// Gets the class object in the most direct way possible.
+/// 	Intended to be used only with plain compiler-checked class identifiers, and thus dies hard and fast (albiet, at runtime; only in DEBUG) if the class isn't found.
+/// @rationale: Having to send explicitly a message to get the class object for a class identifier feels dirty and wrong.
+/// 	Likewise, having explicit runtime calls all over also feels wrong.
+/// @intent: Since I don't think there is a way to compile in a direct reference to the Class object (the associated _OBJC_CLASS_$_«class identifier» entry in the assembly), this should meet or beat the performance of other higher-level class fetch methods (`[«class identifier» class]`, `«class identifier».class`, `NSClassFromString(@"«class identifier»")`).
+#ifndef classfor
+	#ifdef DEBUG
+		id objc_getRequiredClass(const char *name); // forward declaration; alternatively `#import <objc/runtime.h>`
+		#define classfor(class_identifier) (objc_getRequiredClass(#class_identifier))
+	#else
+		id objc_getClass(const char *name); // forward declaration; alternatively `#import <objc/runtime.h>`
+		#define classfor(class_identifier) (objc_getClass(#class_identifier))
+	#endif
+#endif
+
+
+/// Takes anything and compiles it to a string, like wrapping it with quotes.
+/// However, IDEs will continue to recognize the wrapped thing as code, making this uber-useful for debug logging statements.
+/// 	Specifically, if an identifier is renamed, refactor tools will count-in the thing being wrapped for its rename inclusion, and compilers/static analyizers (may) still demand that the thing is valid code.class_copyMethodList
+#ifndef stringof
+	#define stringof(code) (#code)
+#endif
