@@ -6,6 +6,8 @@
 @import Accounts;
 #import "MAZeroingWeakRef.h"
 
+#import "AccountManager.h"
+
 
 
 #pragma mark - Constants
@@ -171,6 +173,7 @@ NSException *exceptionForOutOfRangeInnermostIndexPath(NSIndexPath *indexPath, NS
 - (void)initiateLoginWithAccount:(ACAccount *)twitterAccount
 {
 	NSLog(@"Using twitter account: %@", twitterAccount);
+	[AccountManager.sharedManager authenticateUsingTwitterAccount:twitterAccount];
 }
 
 
