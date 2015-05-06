@@ -44,9 +44,11 @@ NSException *exceptionForOutOfRangeInnermostIndexPath(NSIndexPath *indexPath, co
 #pragma mark - Class
 
 @interface TitleViewController () {
+	MAZeroingWeakRef *_twitterTableWeakRef;
 	MAZeroingWeakRef *_twitterTableControllerWeakRef;
 }
 
+@property(assign, nonatomic) UITableView *twitterTable;
 @property(assign, nonatomic) UITableViewController *twitterTableController;
 @property(assign, readonly, getter=isTwitterPopoverActive, nonatomic) BOOL twitterPopoverActive;
 @property(retain, nonatomic) NSArray *twitterAccountsForPopover;
@@ -58,11 +60,32 @@ NSException *exceptionForOutOfRangeInnermostIndexPath(NSIndexPath *indexPath, co
 - (void)presentNoTwitterAccountsAlert;
 - (void)presentSettingsDirectingAlertWithTitle:(NSString *)title message:(NSString *)message;
 
+- (void)popoverTableView:(UITableView *)tableView didChangeContentSize:(CGSize)contentSize;
+
 @end
 
 
 
 @implementation TitleViewController
+
+- (UITableView *)twitterTable
+{
+	if (_twitterTableWeakRef == nil)
+		return nil;
+	
+	return _twitterTableWeakRef.target;
+}
+- (void)setTwitterTable:(UITableView *)twitterTable
+{
+	[_twitterTableWeakRef release];
+	
+	_twitterTableWeakRef = [[MAZeroingWeakRef alloc] initWithTarget:twitterTable];
+	
+	[twitterTable addObserver:self forKeyPath:@"contentSize" options:0 context:nil];
+	_twitterTableWeakRef.cleanupBlock = ^(UITableView *target) {
+		[twitterTable removeObserver:self forKeyPath:@"contentSize"];
+	};
+}
 
 - (UITableViewController *)twitterTableController
 {
@@ -226,9 +249,26 @@ NSException *exceptionForOutOfRangeInnermostIndexPath(NSIndexPath *indexPath, co
 	if ([segue.identifier isEqualToString:self.twitterPopoverSequeID]) {
 		UITableViewController *destController = segue.destinationViewController;
 		
-		destController.tableView.dataSource = self;
-		destController.tableView.delegate = self;
+		UITableView *tableView = destController.tableView;
+		tableView.dataSource = self;
+		tableView.delegate = self;
+		
+		self.twitterTable = tableView;
 		self.twitterTableController = destController;
+	}
+}
+
+
+#pragma mark KVO
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+	if (!object)
+		return;
+	
+	if (object == self.twitterTable && [keyPath isEqualToString:@"contentSize"]) {
+		UITableView *tableView = object;
+		[self popoverTableView:tableView didChangeContentSize:tableView.contentSize];
 	}
 }
 
@@ -240,7 +280,7 @@ NSException *exceptionForOutOfRangeInnermostIndexPath(NSIndexPath *indexPath, co
 	if (!tableView)
 		return 0;
 	
-	if (tableView == self.twitterTableController.tableView)
+	if (tableView == self.twitterTable)
 	{
 		switch (section) {
 			case 0:
@@ -259,7 +299,7 @@ NSException *exceptionForOutOfRangeInnermostIndexPath(NSIndexPath *indexPath, co
 	if (!tableView)
 		return nil;
 	
-	if (tableView == self.twitterTableController.tableView)
+	if (tableView == self.twitterTable)
 	{
 		NSArray *twitterAccounts = self.twitterAccountsForPopover;
 		
@@ -282,7 +322,7 @@ NSException *exceptionForOutOfRangeInnermostIndexPath(NSIndexPath *indexPath, co
 	if (!tableView)
 		return;
 	
-	if (tableView == self.twitterTableController.tableView)
+	if (tableView == self.twitterTable)
 	{
 		NSArray *twitterAccounts = self.twitterAccountsForPopover;
 		
@@ -297,6 +337,25 @@ NSException *exceptionForOutOfRangeInnermostIndexPath(NSIndexPath *indexPath, co
 		
 		[self initiateLoginWithAccount:twitterAccount];
 	}
+}
+
+- (void)popoverTableView:(UITableView *)tableView didChangeContentSize:(CGSize)contentSize
+{
+	UITableViewController *tableViewController = self.twitterTableController;
+	
+	// size down the size of the rows
+	
+	CGSize existingPreferredContentSize = tableViewController.preferredContentSize;
+	if (CGSizeEqualToSize(existingPreferredContentSize, contentSize))
+		return; // prevents recursive-ish calls
+	
+	tableViewController.preferredContentSize = contentSize;
+	
+	// disable scroll-ability unless the table's decently long
+	
+	CGSize titleViewSize = self.view.bounds.size;
+	BOOL shouldBeScrollable = (contentSize.height > titleViewSize.height * 0.75); // if taller than 3/4s the height of the screen
+	tableView.scrollEnabled = shouldBeScrollable;
 }
 
 @end
