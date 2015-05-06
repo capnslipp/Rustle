@@ -17,6 +17,7 @@
 		D4AFE1B91AF7362E004AD3DE /* TitleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4AFE1B81AF7362E004AD3DE /* TitleViewController.m */; };
 		D4BD7FCE1AF9851900A515ED /* GTCoreBluetoothDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D4BD7FCC1AF9851900A515ED /* GTCoreBluetoothDemo.xcdatamodeld */; };
 		D4BD7FD11AF9872800A515ED /* AccountManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D4BD7FD01AF9872800A515ED /* AccountManager.m */; };
+		D4BD7FD41AF99CD500A515ED /* SavedDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D4BD7FD31AF99CD500A515ED /* SavedDataManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,8 @@
 		D4BD7FCD1AF9851900A515ED /* GTCoreBluetoothDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GTCoreBluetoothDemo.xcdatamodel; sourceTree = "<group>"; };
 		D4BD7FCF1AF9872800A515ED /* AccountManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountManager.h; sourceTree = "<group>"; };
 		D4BD7FD01AF9872800A515ED /* AccountManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountManager.m; sourceTree = "<group>"; };
+		D4BD7FD21AF99CD500A515ED /* SavedDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SavedDataManager.h; sourceTree = "<group>"; };
+		D4BD7FD31AF99CD500A515ED /* SavedDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SavedDataManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +107,8 @@
 				D442C7F51AF5A5D600FF5FF8 /* Images.xcassets */,
 				D442C7F71AF5A5D600FF5FF8 /* LaunchScreen.xib */,
 				D442C7F21AF5A5D600FF5FF8 /* Main.storyboard */,
+				D4BD7FD21AF99CD500A515ED /* SavedDataManager.h */,
+				D4BD7FD31AF99CD500A515ED /* SavedDataManager.m */,
 				D4AFE1B71AF7362E004AD3DE /* TitleViewController.h */,
 				D4AFE1B81AF7362E004AD3DE /* TitleViewController.m */,
 				D442C7E61AF5A5D500FF5FF8 /* supporting files */,
@@ -244,6 +249,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D442C7EC1AF5A5D500FF5FF8 /* AppDelegate.m in Sources */,
+				D4BD7FD41AF99CD500A515ED /* SavedDataManager.m in Sources */,
 				D4AFE1B91AF7362E004AD3DE /* TitleViewController.m in Sources */,
 				D4BD7FCE1AF9851900A515ED /* GTCoreBluetoothDemo.xcdatamodeld in Sources */,
 				D442C7F11AF5A5D600FF5FF8 /* GameViewController.m in Sources */,
