@@ -8,7 +8,7 @@
 
 @interface AccountManager : NSObject
 
-+ (AccountManager *)sharedManager;
++ (instancetype)sharedManager;
 
 @property(assign, readonly, getter=isAuthenticated, nonatomic) BOOL authenticated;
 

@@ -21,7 +21,7 @@ static AccountManager *sSharedManager = nil;
 
 #pragma mark Lifecycle
 
-+ (AccountManager *)sharedManager
++ (instancetype)sharedManager
 {
 	static dispatch_once_t sOnceToken;
 	dispatch_once(&sOnceToken, ^{
