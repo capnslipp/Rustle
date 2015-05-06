@@ -3,6 +3,8 @@
 
 #import "AppDelegate.h"
 
+#import "SavedDataManager.h"
+#import "AccountManager.h"
 
 
 
@@ -11,6 +13,10 @@ static NSURL *sDocumentsDirectory;
 
 
 @interface AppDelegate ()
+
+@property (retain, nonatomic) SavedDataManager *savedDataMan;
+@property (retain, nonatomic) AccountManager *accountMan;
+
 @end
 
 
@@ -21,6 +27,10 @@ static NSURL *sDocumentsDirectory;
 /// Override point for customization after application launch.
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+	// Preempt initialization of managers
+	self.savedDataMan = SavedDataManager.sharedManager;
+	self.accountMan = AccountManager.sharedManager;
+	
 	return YES;
 }
 
