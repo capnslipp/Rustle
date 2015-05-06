@@ -18,11 +18,6 @@ static NSString *const kAppName = @"Rustle";
 
 #pragma mark - Helper Functions
 
-NSUInteger innermostIndexOfIndexPath(NSIndexPath *indexPath)
-{
-	return [indexPath indexAtPosition:(indexPath.length - 1)];
-}
-
 NSException *exceptionForNilStoryboardIDProperty(id<NSObject> propertyOwner, const char *propertyName)
 {
 	return [NSException exceptionWithName:NSInvalidArgumentException
@@ -34,11 +29,11 @@ NSException *exceptionForNilStoryboardIDProperty(id<NSObject> propertyOwner, con
 	];
 }
 
-NSException *exceptionForOutOfRangeInnermostIndexPath(NSIndexPath *indexPath, NSUInteger innermostIndex, const char *countVarName, NSUInteger countVarValue)
+NSException *exceptionForOutOfRangeInnermostIndexPath(NSIndexPath *indexPath, const char *countVarName, NSUInteger countVarValue)
 {
 	return [NSException exceptionWithName:NSInvalidArgumentException
 		reason:[NSString stringWithFormat:@"Invalid %@ has an innermost index of %lu, which must be < the %s (%lu).",
-			indexPath, (unsigned long)innermostIndex, countVarName, (unsigned long)countVarValue
+			indexPath, (unsigned long)indexPath.innermostIndex, countVarName, (unsigned long)countVarValue
 		]
 		userInfo:nil
 	];
@@ -268,9 +263,9 @@ NSException *exceptionForOutOfRangeInnermostIndexPath(NSIndexPath *indexPath, NS
 	{
 		NSArray *twitterAccounts = self.twitterAccountsForPopover;
 		
-		NSUInteger innermostIndex = innermostIndexOfIndexPath(indexPath);
+		NSUInteger innermostIndex = indexPath.innermostIndex;
 		if (innermostIndex >= twitterAccounts.count)
-			@throw exceptionForOutOfRangeInnermostIndexPath(indexPath, innermostIndex, stringof(twitterAccounts.count), twitterAccounts.count);
+			@throw exceptionForOutOfRangeInnermostIndexPath(indexPath, stringof(twitterAccounts.count), twitterAccounts.count);
 		
 		ACAccount *twitterAccount = twitterAccounts[innermostIndex];
 		UITableViewCell *tableCell = [tableView dequeueReusableCellWithIdentifier:self.twitterPopoverTableCellReuseID];
@@ -291,9 +286,9 @@ NSException *exceptionForOutOfRangeInnermostIndexPath(NSIndexPath *indexPath, NS
 	{
 		NSArray *twitterAccounts = self.twitterAccountsForPopover;
 		
-		NSUInteger innermostIndex = innermostIndexOfIndexPath(indexPath);
+		NSUInteger innermostIndex = indexPath.innermostIndex;
 		if (innermostIndex >= twitterAccounts.count)
-			@throw exceptionForOutOfRangeInnermostIndexPath(indexPath, innermostIndex, stringof(twitterAccounts.count), twitterAccounts.count);
+			@throw exceptionForOutOfRangeInnermostIndexPath(indexPath, stringof(twitterAccounts.count), twitterAccounts.count);
 		
 		ACAccount *twitterAccount = twitterAccounts[innermostIndex];
 		

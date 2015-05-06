@@ -18,6 +18,7 @@
 		D4BD7FCE1AF9851900A515ED /* GTCoreBluetoothDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D4BD7FCC1AF9851900A515ED /* GTCoreBluetoothDemo.xcdatamodeld */; };
 		D4BD7FD11AF9872800A515ED /* AccountManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D4BD7FD01AF9872800A515ED /* AccountManager.m */; };
 		D4BD7FD41AF99CD500A515ED /* SavedDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D4BD7FD31AF99CD500A515ED /* SavedDataManager.m */; };
+		D4BD7FD91AF9AD0800A515ED /* NSIndexPath+GTExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = D4BD7FD81AF9AD0800A515ED /* NSIndexPath+GTExtensions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,8 @@
 		D4BD7FD01AF9872800A515ED /* AccountManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountManager.m; sourceTree = "<group>"; };
 		D4BD7FD21AF99CD500A515ED /* SavedDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SavedDataManager.h; sourceTree = "<group>"; };
 		D4BD7FD31AF99CD500A515ED /* SavedDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SavedDataManager.m; sourceTree = "<group>"; };
+		D4BD7FD71AF9AD0800A515ED /* NSIndexPath+GTExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSIndexPath+GTExtensions.h"; sourceTree = "<group>"; };
+		D4BD7FD81AF9AD0800A515ED /* NSIndexPath+GTExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSIndexPath+GTExtensions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +122,7 @@
 		D442C7E61AF5A5D500FF5FF8 /* supporting files */ = {
 			isa = PBXGroup;
 			children = (
+				D4BD7FD61AF9AC6700A515ED /* Extensions */,
 				D442C7E71AF5A5D500FF5FF8 /* Info.plist */,
 				D442C7E81AF5A5D500FF5FF8 /* main.m */,
 				D4AFE1BA1AF74124004AD3DE /* Prefix.pch */,
@@ -141,6 +145,15 @@
 				D442C8031AF5A5D600FF5FF8 /* Info.plist */,
 			);
 			name = "supporting files";
+			sourceTree = "<group>";
+		};
+		D4BD7FD61AF9AC6700A515ED /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D4BD7FD71AF9AD0800A515ED /* NSIndexPath+GTExtensions.h */,
+				D4BD7FD81AF9AD0800A515ED /* NSIndexPath+GTExtensions.m */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,6 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D442C7EC1AF5A5D500FF5FF8 /* AppDelegate.m in Sources */,
+				D4BD7FD91AF9AD0800A515ED /* NSIndexPath+GTExtensions.m in Sources */,
 				D4BD7FD41AF99CD500A515ED /* SavedDataManager.m in Sources */,
 				D4AFE1B91AF7362E004AD3DE /* TitleViewController.m in Sources */,
 				D4BD7FCE1AF9851900A515ED /* GTCoreBluetoothDemo.xcdatamodeld in Sources */,

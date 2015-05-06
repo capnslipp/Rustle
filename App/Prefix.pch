@@ -3,6 +3,10 @@
 
 
 
+#import "NSIndexPath+GTExtensions.h"
+
+
+
 /// Gets the class object in the most direct way possible.
 /// 	Intended to be used only with plain compiler-checked class identifiers, and thus dies hard and fast (albiet, at runtime; only in DEBUG) if the class isn't found.
 /// @rationale: Having to send explicitly a message to get the class object for a class identifier feels dirty and wrong.
