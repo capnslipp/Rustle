@@ -77,14 +77,20 @@ NSException *exceptionForOutOfRangeInnermostIndexPath(NSIndexPath *indexPath, co
 }
 - (void)setTwitterTable:(UITableView *)twitterTable
 {
-	[_twitterTableWeakRef release];
+	if (_twitterTableWeakRef != nil) {
+		[_twitterTableWeakRef.target removeObserver:self forKeyPath:@"contentSize"];
+		
+		[_twitterTableWeakRef release];
+	}
 	
-	_twitterTableWeakRef = [[MAZeroingWeakRef alloc] initWithTarget:twitterTable];
-	
-	[twitterTable addObserver:self forKeyPath:@"contentSize" options:0 context:nil];
-	_twitterTableWeakRef.cleanupBlock = ^(UITableView *target) {
-		[twitterTable removeObserver:self forKeyPath:@"contentSize"];
-	};
+	if (twitterTable == nil) {
+		_twitterTableWeakRef = nil;
+	}
+	else {
+		_twitterTableWeakRef = [[MAZeroingWeakRef alloc] initWithTarget:twitterTable];
+		
+		[twitterTable addObserver:self forKeyPath:@"contentSize" options:0 context:nil];
+	}
 }
 
 - (UITableViewController *)twitterTableController
@@ -334,6 +340,7 @@ NSException *exceptionForOutOfRangeInnermostIndexPath(NSIndexPath *indexPath, co
 		
 		[self.twitterTableController dismissViewControllerAnimated:YES completion:nil];
 		self.twitterTableController = nil;
+		self.twitterTable = nil;
 		
 		[self initiateLoginWithAccount:twitterAccount];
 	}
