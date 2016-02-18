@@ -1,4 +1,4 @@
-// GTCoreBluetoothDemo
+// Rustle
 // @author: Slipp Douglas Thompson
 
 #import "SavedDataManager.h"
@@ -10,7 +10,7 @@
 
 #pragma mark - Constants & Statics
 
-NSString *const kCoreDataSQLiteExtensionlessFileame = @"GTCoreBluetoothDemo";
+NSString *const kCoreDataSQLiteExtensionlessFileame = @"Rustle";
 
 NSArray *const kMainBundlePlaceholder = nil;
 NSOperationQueue *const kSynchronouslyQueuePlaceholder = nil;

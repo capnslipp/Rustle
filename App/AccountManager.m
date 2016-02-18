@@ -1,4 +1,4 @@
-// GTCoreBluetoothDemo
+// Rustle
 // @author: Slipp Douglas Thompson
 
 #import "AccountManager.h"
