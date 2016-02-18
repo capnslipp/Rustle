@@ -1,4 +1,4 @@
 platform :ios, '8.0'
-xcodeproj 'GTCoreBluetoothDemo.xcodeproj'
+xcodeproj 'Rustle.xcodeproj'
 
 pod 'MAZeroingWeakRef'

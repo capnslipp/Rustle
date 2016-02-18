@@ -15,10 +15,10 @@
 		D442C7F61AF5A5D600FF5FF8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D442C7F51AF5A5D600FF5FF8 /* Images.xcassets */; };
 		D442C7F91AF5A5D600FF5FF8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D442C7F71AF5A5D600FF5FF8 /* LaunchScreen.xib */; };
 		D4AFE1B91AF7362E004AD3DE /* TitleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4AFE1B81AF7362E004AD3DE /* TitleViewController.m */; };
-		D4BD7FCE1AF9851900A515ED /* GTCoreBluetoothDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D4BD7FCC1AF9851900A515ED /* GTCoreBluetoothDemo.xcdatamodeld */; };
+		D4BD7FCE1AF9851900A515ED /* Rustle.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D4BD7FCC1AF9851900A515ED /* Rustle.xcdatamodeld */; };
 		D4BD7FD11AF9872800A515ED /* AccountManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D4BD7FD01AF9872800A515ED /* AccountManager.m */; };
 		D4BD7FD41AF99CD500A515ED /* SavedDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D4BD7FD31AF99CD500A515ED /* SavedDataManager.m */; };
-		D4BD7FD91AF9AD0800A515ED /* NSIndexPath+GTExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = D4BD7FD81AF9AD0800A515ED /* NSIndexPath+GTExtensions.m */; };
+		D4BD7FD91AF9AD0800A515ED /* NSIndexPath+RustleExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = D4BD7FD81AF9AD0800A515ED /* NSIndexPath+RustleExtensions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,17 +36,17 @@
 		D442C7F51AF5A5D600FF5FF8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D442C7F81AF5A5D600FF5FF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		D442C8031AF5A5D600FF5FF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D442C8041AF5A5D600FF5FF8 /* GTCoreBluetoothDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GTCoreBluetoothDemoTests.m; sourceTree = "<group>"; };
+		D442C8041AF5A5D600FF5FF8 /* RustleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RustleTests.m; sourceTree = "<group>"; };
 		D4AFE1B71AF7362E004AD3DE /* TitleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleViewController.h; sourceTree = "<group>"; };
 		D4AFE1B81AF7362E004AD3DE /* TitleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitleViewController.m; sourceTree = "<group>"; };
 		D4AFE1BA1AF74124004AD3DE /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
-		D4BD7FCD1AF9851900A515ED /* GTCoreBluetoothDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GTCoreBluetoothDemo.xcdatamodel; sourceTree = "<group>"; };
+		D4BD7FCD1AF9851900A515ED /* Rustle.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Rustle.xcdatamodel; sourceTree = "<group>"; };
 		D4BD7FCF1AF9872800A515ED /* AccountManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountManager.h; sourceTree = "<group>"; };
 		D4BD7FD01AF9872800A515ED /* AccountManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountManager.m; sourceTree = "<group>"; };
 		D4BD7FD21AF99CD500A515ED /* SavedDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SavedDataManager.h; sourceTree = "<group>"; };
 		D4BD7FD31AF99CD500A515ED /* SavedDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SavedDataManager.m; sourceTree = "<group>"; };
-		D4BD7FD71AF9AD0800A515ED /* NSIndexPath+GTExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSIndexPath+GTExtensions.h"; sourceTree = "<group>"; };
-		D4BD7FD81AF9AD0800A515ED /* NSIndexPath+GTExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSIndexPath+GTExtensions.m"; sourceTree = "<group>"; };
+		D4BD7FD71AF9AD0800A515ED /* NSIndexPath+RustleExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSIndexPath+RustleExtensions.h"; sourceTree = "<group>"; };
+		D4BD7FD81AF9AD0800A515ED /* NSIndexPath+RustleExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSIndexPath+RustleExtensions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,7 +106,7 @@
 				D442C7EB1AF5A5D500FF5FF8 /* AppDelegate.m */,
 				D442C7EF1AF5A5D600FF5FF8 /* GameViewController.h */,
 				D442C7F01AF5A5D600FF5FF8 /* GameViewController.m */,
-				D4BD7FCC1AF9851900A515ED /* GTCoreBluetoothDemo.xcdatamodeld */,
+				D4BD7FCC1AF9851900A515ED /* Rustle.xcdatamodeld */,
 				D442C7F51AF5A5D600FF5FF8 /* Images.xcassets */,
 				D442C7F71AF5A5D600FF5FF8 /* LaunchScreen.xib */,
 				D442C7F21AF5A5D600FF5FF8 /* Main.storyboard */,
@@ -133,7 +133,7 @@
 		D442C8011AF5A5D600FF5FF8 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				D442C8041AF5A5D600FF5FF8 /* GTCoreBluetoothDemoTests.m */,
+				D442C8041AF5A5D600FF5FF8 /* RustleTests.m */,
 				D442C8021AF5A5D600FF5FF8 /* supporting files */,
 			);
 			path = Tests;
@@ -150,8 +150,8 @@
 		D4BD7FD61AF9AC6700A515ED /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				D4BD7FD71AF9AD0800A515ED /* NSIndexPath+GTExtensions.h */,
-				D4BD7FD81AF9AD0800A515ED /* NSIndexPath+GTExtensions.m */,
+				D4BD7FD71AF9AD0800A515ED /* NSIndexPath+RustleExtensions.h */,
+				D4BD7FD81AF9AD0800A515ED /* NSIndexPath+RustleExtensions.m */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -159,9 +159,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D442C7E21AF5A5D500FF5FF8 /* GTCoreBluetoothDemo */ = {
+		D442C7E21AF5A5D500FF5FF8 /* Rustle */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D442C8081AF5A5D600FF5FF8 /* Build configuration list for PBXNativeTarget "GTCoreBluetoothDemo" */;
+			buildConfigurationList = D442C8081AF5A5D600FF5FF8 /* Build configuration list for PBXNativeTarget "Rustle" */;
 			buildPhases = (
 				BDC286DE8C4DED89E897A4EC /* Check Pods Manifest.lock */,
 				D442C7DF1AF5A5D500FF5FF8 /* Sources */,
@@ -173,8 +173,8 @@
 			);
 			dependencies = (
 			);
-			name = GTCoreBluetoothDemo;
-			productName = GTCoreBluetoothDemo;
+			name = Rustle;
+			productName = Rustle;
 			productReference = D442C7E31AF5A5D500FF5FF8 /* Rustle.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -192,7 +192,7 @@
 					};
 				};
 			};
-			buildConfigurationList = D442C7DE1AF5A5D500FF5FF8 /* Build configuration list for PBXProject "GTCoreBluetoothDemo" */;
+			buildConfigurationList = D442C7DE1AF5A5D500FF5FF8 /* Build configuration list for PBXProject "Rustle" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -205,7 +205,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D442C7E21AF5A5D500FF5FF8 /* GTCoreBluetoothDemo */,
+				D442C7E21AF5A5D500FF5FF8 /* Rustle */,
 			);
 		};
 /* End PBXProject section */
@@ -262,10 +262,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D442C7EC1AF5A5D500FF5FF8 /* AppDelegate.m in Sources */,
-				D4BD7FD91AF9AD0800A515ED /* NSIndexPath+GTExtensions.m in Sources */,
+				D4BD7FD91AF9AD0800A515ED /* NSIndexPath+RustleExtensions.m in Sources */,
 				D4BD7FD41AF99CD500A515ED /* SavedDataManager.m in Sources */,
 				D4AFE1B91AF7362E004AD3DE /* TitleViewController.m in Sources */,
-				D4BD7FCE1AF9851900A515ED /* GTCoreBluetoothDemo.xcdatamodeld in Sources */,
+				D4BD7FCE1AF9851900A515ED /* Rustle.xcdatamodeld in Sources */,
 				D442C7F11AF5A5D600FF5FF8 /* GameViewController.m in Sources */,
 				D442C7E91AF5A5D500FF5FF8 /* main.m in Sources */,
 				D4BD7FD11AF9872800A515ED /* AccountManager.m in Sources */,
@@ -403,7 +403,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D442C7DE1AF5A5D500FF5FF8 /* Build configuration list for PBXProject "GTCoreBluetoothDemo" */ = {
+		D442C7DE1AF5A5D500FF5FF8 /* Build configuration list for PBXProject "Rustle" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D442C8061AF5A5D600FF5FF8 /* Debug */,
@@ -412,7 +412,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D442C8081AF5A5D600FF5FF8 /* Build configuration list for PBXNativeTarget "GTCoreBluetoothDemo" */ = {
+		D442C8081AF5A5D600FF5FF8 /* Build configuration list for PBXNativeTarget "Rustle" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D442C8091AF5A5D600FF5FF8 /* Debug */,
@@ -424,13 +424,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		D4BD7FCC1AF9851900A515ED /* GTCoreBluetoothDemo.xcdatamodeld */ = {
+		D4BD7FCC1AF9851900A515ED /* Rustle.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				D4BD7FCD1AF9851900A515ED /* GTCoreBluetoothDemo.xcdatamodel */,
+				D4BD7FCD1AF9851900A515ED /* Rustle.xcdatamodel */,
 			);
-			currentVersion = D4BD7FCD1AF9851900A515ED /* GTCoreBluetoothDemo.xcdatamodel */;
-			path = GTCoreBluetoothDemo.xcdatamodeld;
+			currentVersion = D4BD7FCD1AF9851900A515ED /* Rustle.xcdatamodel */;
+			path = Rustle.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

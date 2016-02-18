@@ -1,7 +1,7 @@
-// GTCoreBluetoothDemo
+// Rustle
 // @author: Slipp Douglas Thompson
 
-#import "NSIndexPath+GTExtensions.h"
+#import "NSIndexPath+RustleExtensions.h"
 
 
 

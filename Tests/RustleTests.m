@@ -1,6 +1,6 @@
 //
-//  GTCoreBluetoothDemoTests.m
-//  GTCoreBluetoothDemoTests
+//  RustleTests.m
+//  RustleTests
 //
 //  Created by Cap'n Slipp on 5/2/15.
 //  Copyright (c) 2015 Cap'n Slipp. All rights reserved.
@@ -9,11 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 
-@interface GTCoreBluetoothDemoTests : XCTestCase
+@interface RustleTests : XCTestCase
 
 @end
 
-@implementation GTCoreBluetoothDemoTests
+@implementation RustleTests
 
 - (void)setUp {
     [super setUp];
