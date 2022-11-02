@@ -6,7 +6,7 @@
 @import Accounts;
 #import "MAZeroingWeakRef.h"
 
-#import "AccountManager.h"
+#import "Rustle-Swift.h"
 
 
 
@@ -199,7 +199,7 @@ NSException *exceptionForOutOfRangeInnermostIndexPath(NSIndexPath *indexPath, co
 - (void)initiateLoginWithAccount:(ACAccount *)twitterAccount
 {
 	NSLog(@"Using twitter account: %@", twitterAccount);
-	[AccountManager.sharedManager authenticateUsingTwitterAccount:twitterAccount];
+	[AccountManager.shared authenticateUsingTwitterAccount:twitterAccount];
 }
 
 

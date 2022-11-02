@@ -4,7 +4,7 @@
 #import "AppDelegate.h"
 
 #import "SavedDataManager.h"
-#import "AccountManager.h"
+#import "Rustle-Swift.h"
 
 
 
@@ -29,7 +29,7 @@ static NSURL *sDocumentsDirectory;
 {
 	// Preempt initialization of managers
 	self.savedDataMan = SavedDataManager.sharedManager;
-	self.accountMan = AccountManager.sharedManager;
+	self.accountMan = AccountManager.shared;
 	
 	return YES;
 }
