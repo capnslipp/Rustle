@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		5FD883A472092C333E9222AA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 597412C3C3453082830C2327 /* libPods.a */; };
-		D442C7E91AF5A5D500FF5FF8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D442C7E81AF5A5D500FF5FF8 /* main.m */; };
-		D442C7EC1AF5A5D500FF5FF8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D442C7EB1AF5A5D500FF5FF8 /* AppDelegate.m */; };
 		D442C7F11AF5A5D600FF5FF8 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D442C7F01AF5A5D600FF5FF8 /* GameViewController.m */; };
 		D442C7F41AF5A5D600FF5FF8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D442C7F21AF5A5D600FF5FF8 /* Main.storyboard */; };
 		D442C7F61AF5A5D600FF5FF8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D442C7F51AF5A5D600FF5FF8 /* Images.xcassets */; };
@@ -19,6 +17,7 @@
 		D4BD7FD41AF99CD500A515ED /* SavedDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D4BD7FD31AF99CD500A515ED /* SavedDataManager.m */; };
 		D4BD7FD91AF9AD0800A515ED /* NSIndexPath+RustleExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = D4BD7FD81AF9AD0800A515ED /* NSIndexPath+RustleExtensions.m */; };
 		FA8BE99429132D5B004ACC33 /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8BE99329132D5B004ACC33 /* AccountManager.swift */; };
+		FA8BE9A32913413D004ACC33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8BE9A22913413D004ACC33 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,9 +26,6 @@
 		8CD457D54A6CC4BE8FA51571 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D442C7E31AF5A5D500FF5FF8 /* Rustle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rustle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D442C7E71AF5A5D500FF5FF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D442C7E81AF5A5D500FF5FF8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		D442C7EA1AF5A5D500FF5FF8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		D442C7EB1AF5A5D500FF5FF8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		D442C7EF1AF5A5D600FF5FF8 /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
 		D442C7F01AF5A5D600FF5FF8 /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 		D442C7F31AF5A5D600FF5FF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -47,6 +43,7 @@
 		D4BD7FD81AF9AD0800A515ED /* NSIndexPath+RustleExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSIndexPath+RustleExtensions.m"; sourceTree = "<group>"; };
 		FA8BE99229132D5A004ACC33 /* Rustle-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Rustle-Bridging-Header.h"; sourceTree = "<group>"; };
 		FA8BE99329132D5B004ACC33 /* AccountManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountManager.swift; sourceTree = "<group>"; };
+		FA8BE9A22913413D004ACC33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,8 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				FA8BE99329132D5B004ACC33 /* AccountManager.swift */,
-				D442C7EA1AF5A5D500FF5FF8 /* AppDelegate.h */,
-				D442C7EB1AF5A5D500FF5FF8 /* AppDelegate.m */,
+				FA8BE9A22913413D004ACC33 /* AppDelegate.swift */,
 				D442C7EF1AF5A5D600FF5FF8 /* GameViewController.h */,
 				D442C7F01AF5A5D600FF5FF8 /* GameViewController.m */,
 				D4BD7FCC1AF9851900A515ED /* Rustle.xcdatamodeld */,
@@ -123,7 +119,6 @@
 			children = (
 				D4BD7FD61AF9AC6700A515ED /* Extensions */,
 				D442C7E71AF5A5D500FF5FF8 /* Info.plist */,
-				D442C7E81AF5A5D500FF5FF8 /* main.m */,
 				D4AFE1BA1AF74124004AD3DE /* Prefix.pch */,
 				FA8BE99229132D5A004ACC33 /* Rustle-Bridging-Header.h */,
 			);
@@ -263,13 +258,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D442C7EC1AF5A5D500FF5FF8 /* AppDelegate.m in Sources */,
 				D4BD7FD91AF9AD0800A515ED /* NSIndexPath+RustleExtensions.m in Sources */,
 				D4BD7FD41AF99CD500A515ED /* SavedDataManager.m in Sources */,
+				FA8BE9A32913413D004ACC33 /* AppDelegate.swift in Sources */,
 				D4AFE1B91AF7362E004AD3DE /* TitleViewController.m in Sources */,
 				D4BD7FCE1AF9851900A515ED /* Rustle.xcdatamodeld in Sources */,
 				D442C7F11AF5A5D600FF5FF8 /* GameViewController.m in Sources */,
-				D442C7E91AF5A5D500FF5FF8 /* main.m in Sources */,
 				FA8BE99429132D5B004ACC33 /* AccountManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
