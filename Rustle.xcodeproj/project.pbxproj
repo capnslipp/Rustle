@@ -14,10 +14,10 @@
 		D442C7F91AF5A5D600FF5FF8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D442C7F71AF5A5D600FF5FF8 /* LaunchScreen.xib */; };
 		D4AFE1B91AF7362E004AD3DE /* TitleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4AFE1B81AF7362E004AD3DE /* TitleViewController.m */; };
 		D4BD7FCE1AF9851900A515ED /* Rustle.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D4BD7FCC1AF9851900A515ED /* Rustle.xcdatamodeld */; };
-		D4BD7FD41AF99CD500A515ED /* SavedDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D4BD7FD31AF99CD500A515ED /* SavedDataManager.m */; };
 		D4BD7FD91AF9AD0800A515ED /* NSIndexPath+RustleExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = D4BD7FD81AF9AD0800A515ED /* NSIndexPath+RustleExtensions.m */; };
 		FA8BE99429132D5B004ACC33 /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8BE99329132D5B004ACC33 /* AccountManager.swift */; };
 		FA8BE9A32913413D004ACC33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8BE9A22913413D004ACC33 /* AppDelegate.swift */; };
+		FA8BEA28291356C3004ACC33 /* SavedDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8BEA27291356C3004ACC33 /* SavedDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,13 +37,12 @@
 		D4AFE1B81AF7362E004AD3DE /* TitleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitleViewController.m; sourceTree = "<group>"; };
 		D4AFE1BA1AF74124004AD3DE /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 		D4BD7FCD1AF9851900A515ED /* Rustle.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Rustle.xcdatamodel; sourceTree = "<group>"; };
-		D4BD7FD21AF99CD500A515ED /* SavedDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SavedDataManager.h; sourceTree = "<group>"; };
-		D4BD7FD31AF99CD500A515ED /* SavedDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SavedDataManager.m; sourceTree = "<group>"; };
 		D4BD7FD71AF9AD0800A515ED /* NSIndexPath+RustleExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSIndexPath+RustleExtensions.h"; sourceTree = "<group>"; };
 		D4BD7FD81AF9AD0800A515ED /* NSIndexPath+RustleExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSIndexPath+RustleExtensions.m"; sourceTree = "<group>"; };
 		FA8BE99229132D5A004ACC33 /* Rustle-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Rustle-Bridging-Header.h"; sourceTree = "<group>"; };
 		FA8BE99329132D5B004ACC33 /* AccountManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountManager.swift; sourceTree = "<group>"; };
 		FA8BE9A22913413D004ACC33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FA8BEA27291356C3004ACC33 /* SavedDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,8 +104,7 @@
 				D442C7F51AF5A5D600FF5FF8 /* Images.xcassets */,
 				D442C7F71AF5A5D600FF5FF8 /* LaunchScreen.xib */,
 				D442C7F21AF5A5D600FF5FF8 /* Main.storyboard */,
-				D4BD7FD21AF99CD500A515ED /* SavedDataManager.h */,
-				D4BD7FD31AF99CD500A515ED /* SavedDataManager.m */,
+				FA8BEA27291356C3004ACC33 /* SavedDataManager.swift */,
 				D4AFE1B71AF7362E004AD3DE /* TitleViewController.h */,
 				D4AFE1B81AF7362E004AD3DE /* TitleViewController.m */,
 				D442C7E61AF5A5D500FF5FF8 /* supporting files */,
@@ -259,7 +257,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4BD7FD91AF9AD0800A515ED /* NSIndexPath+RustleExtensions.m in Sources */,
-				D4BD7FD41AF99CD500A515ED /* SavedDataManager.m in Sources */,
+				FA8BEA28291356C3004ACC33 /* SavedDataManager.swift in Sources */,
 				FA8BE9A32913413D004ACC33 /* AppDelegate.swift in Sources */,
 				D4AFE1B91AF7362E004AD3DE /* TitleViewController.m in Sources */,
 				D4BD7FCE1AF9851900A515ED /* Rustle.xcdatamodeld in Sources */,

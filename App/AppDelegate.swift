@@ -20,7 +20,7 @@ import UIKit
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool
 	{
 		// Preempt initialization of managers
-		self.savedDataMan = SavedDataManager.shared()
+		self.savedDataMan = SavedDataManager.shared
 		self.accountMan = AccountManager.shared
 	
 		return true
