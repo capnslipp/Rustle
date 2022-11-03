@@ -160,13 +160,15 @@ NSException *exceptionForOutOfRangeInnermostIndexPath(NSIndexPath *indexPath, co
 	[accountStore requestAccessToAccountsWithType:twitterAccountType
 		options:nil
 		completion:^(BOOL granted, NSError *error) {
-			if (!granted) {
-				[self presentTwitterAccessNotGrantedAlert];
-			}
-			else {
-				NSArray *twitterAccounts = [accountStore accountsWithAccountType:twitterAccountType];
-				[self askForTwitterAcountFrom:twitterAccounts];
-			}
+			dispatch_sync(dispatch_get_main_queue(), ^{
+				if (!granted) {
+					[self presentTwitterAccessNotGrantedAlert];
+				}
+				else {
+					NSArray *twitterAccounts = [accountStore accountsWithAccountType:twitterAccountType];
+					[self askForTwitterAcountFrom:twitterAccounts];
+				}
+			});
 		}
 	];
 }
