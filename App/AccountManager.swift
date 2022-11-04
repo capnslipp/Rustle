@@ -11,7 +11,7 @@ fileprivate let logger = Logger(subsystem: Bundle.main.bundleIdentifier!, catego
 
 
 
-@objcMembers class AccountManager : NSObject
+class AccountManager
 {
 	enum Error : Swift.Error {
 		case accountTypeNotTwitter(String)
@@ -23,7 +23,7 @@ fileprivate let logger = Logger(subsystem: Bundle.main.bundleIdentifier!, catego
 	private static var _shared = AccountManager()
 	class var shared: AccountManager { _shared }
 	
-	override init()
+	init()
 	{
 	}
 	
@@ -47,12 +47,6 @@ fileprivate let logger = Logger(subsystem: Bundle.main.bundleIdentifier!, catego
 		// @todo: set up ivars using `twitterAccount`
 		
 		return true
-	}
-	
-	
-	// TEMP, for Obj-C compat
-	func authenticateUsingTwitterAccount(_ twitterAccount: ACAccount) -> Bool {
-		try! authenticate(usingTwitterAccount: twitterAccount)
 	}
 }
 

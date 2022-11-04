@@ -13,7 +13,7 @@ fileprivate let synchronouslyQueuePlaceholder: OperationQueue? = nil
 
 
 
-@objcMembers class SavedDataManager : NSObject
+class SavedDataManager
 {
 	enum Error : Swift.Error {
 		case unableToOpenCoreDataDBFile(String)
@@ -27,10 +27,8 @@ fileprivate let synchronouslyQueuePlaceholder: OperationQueue? = nil
 	private static var _shared = SavedDataManager()
 	class var shared: SavedDataManager { _shared }
 	
-	override init()
+	init()
 	{
-		super.init()
-		
 		registerAppNotifications()
 	}
 	

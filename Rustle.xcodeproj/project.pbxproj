@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5FD883A472092C333E9222AA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 597412C3C3453082830C2327 /* libPods.a */; };
 		D442C7F41AF5A5D600FF5FF8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D442C7F21AF5A5D600FF5FF8 /* Main.storyboard */; };
 		D442C7F61AF5A5D600FF5FF8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D442C7F51AF5A5D600FF5FF8 /* Images.xcassets */; };
 		D442C7F91AF5A5D600FF5FF8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D442C7F71AF5A5D600FF5FF8 /* LaunchScreen.xib */; };
@@ -21,9 +20,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		597412C3C3453082830C2327 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		7F0AA9183000DE1C1659C1C2 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		8CD457D54A6CC4BE8FA51571 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D442C7E31AF5A5D500FF5FF8 /* Rustle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rustle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D442C7E71AF5A5D500FF5FF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D442C7F31AF5A5D600FF5FF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -31,9 +27,7 @@
 		D442C7F81AF5A5D600FF5FF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		D442C8031AF5A5D600FF5FF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D442C8041AF5A5D600FF5FF8 /* RustleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RustleTests.m; sourceTree = "<group>"; };
-		D4AFE1BA1AF74124004AD3DE /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 		D4BD7FCD1AF9851900A515ED /* Rustle.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Rustle.xcdatamodel; sourceTree = "<group>"; };
-		FA8BE99229132D5A004ACC33 /* Rustle-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Rustle-Bridging-Header.h"; sourceTree = "<group>"; };
 		FA85CC1F292B4A1100C0C008 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		FA8BE99329132D5B004ACC33 /* AccountManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountManager.swift; sourceTree = "<group>"; };
 		FA8BE9A22913413D004ACC33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -47,38 +41,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5FD883A472092C333E9222AA /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4A8591B8136AF4708416B72B /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				597412C3C3453082830C2327 /* libPods.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		6F3CAD3F1F32A44028CF1F80 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				7F0AA9183000DE1C1659C1C2 /* Pods.debug.xcconfig */,
-				8CD457D54A6CC4BE8FA51571 /* Pods.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		D442C7DA1AF5A5D500FF5FF8 = {
 			isa = PBXGroup;
 			children = (
 				D442C7E51AF5A5D500FF5FF8 /* App */,
 				D442C8011AF5A5D600FF5FF8 /* Tests */,
 				D442C7E41AF5A5D500FF5FF8 /* Products */,
-				6F3CAD3F1F32A44028CF1F80 /* Pods */,
-				4A8591B8136AF4708416B72B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -112,8 +86,6 @@
 			children = (
 				D4BD7FD61AF9AC6700A515ED /* Extensions */,
 				D442C7E71AF5A5D500FF5FF8 /* Info.plist */,
-				D4AFE1BA1AF74124004AD3DE /* Prefix.pch */,
-				FA8BE99229132D5A004ACC33 /* Rustle-Bridging-Header.h */,
 			);
 			name = "supporting files";
 			sourceTree = "<group>";
@@ -150,11 +122,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D442C8081AF5A5D600FF5FF8 /* Build configuration list for PBXNativeTarget "Rustle" */;
 			buildPhases = (
-				BDC286DE8C4DED89E897A4EC /* Check Pods Manifest.lock */,
 				D442C7DF1AF5A5D500FF5FF8 /* Sources */,
 				D442C7E01AF5A5D500FF5FF8 /* Frameworks */,
 				D442C7E11AF5A5D500FF5FF8 /* Resources */,
-				DF8D9C6985AB1796D458E4D1 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -211,39 +181,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		BDC286DE8C4DED89E897A4EC /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		DF8D9C6985AB1796D458E4D1 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D442C7DF1AF5A5D500FF5FF8 /* Sources */ = {
@@ -366,16 +303,13 @@
 		};
 		D442C8091AF5A5D600FF5FF8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7F0AA9183000DE1C1659C1C2 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				GCC_PREFIX_HEADER = App/Prefix.pch;
 				INFOPLIST_FILE = App/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = Rustle;
-				SWIFT_OBJC_BRIDGING_HEADER = "App/Rustle-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
@@ -383,16 +317,13 @@
 		};
 		D442C80A1AF5A5D600FF5FF8 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8CD457D54A6CC4BE8FA51571 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				GCC_PREFIX_HEADER = App/Prefix.pch;
 				INFOPLIST_FILE = App/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = Rustle;
-				SWIFT_OBJC_BRIDGING_HEADER = "App/Rustle-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;

@@ -19,7 +19,7 @@ let appName = "Rustle"
 
 // MARK: - Class
 
-@objcMembers class TitleViewController : UIViewController, UIPopoverPresentationControllerDelegate, UITableViewDataSource, UITableViewDelegate
+class TitleViewController : UIViewController, UIPopoverPresentationControllerDelegate, UITableViewDataSource, UITableViewDelegate
 {
 	enum Error : Swift.Error {
 		case nilStoryboardIDProperty(String, propertyName: String)
@@ -56,7 +56,7 @@ let appName = "Rustle"
 	}
 	
 	private var _twitterPopoverSequeID: String? = nil
-	var twitterPopoverSequeID: String {
+	@IBInspectable var twitterPopoverSequeID: String {
 		get {
 			guard let value = _twitterPopoverSequeID else {
 				let propertyName = "twitterPopoverSequeID"
@@ -69,7 +69,7 @@ let appName = "Rustle"
 	}
 	
 	private var _twitterPopoverTableCellReuseID: String? = nil
-	var twitterPopoverTableCellReuseID: String {
+	@IBInspectable var twitterPopoverTableCellReuseID: String {
 		get {
 			guard let value = _twitterPopoverTableCellReuseID else {
 				let propertyName = "twitterPopoverTableCellReuseID"
