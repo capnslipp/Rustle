@@ -13,7 +13,6 @@
 		D442C7F61AF5A5D600FF5FF8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D442C7F51AF5A5D600FF5FF8 /* Images.xcassets */; };
 		D442C7F91AF5A5D600FF5FF8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D442C7F71AF5A5D600FF5FF8 /* LaunchScreen.xib */; };
 		D4BD7FCE1AF9851900A515ED /* Rustle.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D4BD7FCC1AF9851900A515ED /* Rustle.xcdatamodeld */; };
-		D4BD7FD91AF9AD0800A515ED /* NSIndexPath+RustleExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = D4BD7FD81AF9AD0800A515ED /* NSIndexPath+RustleExtensions.m */; };
 		FA8BE99429132D5B004ACC33 /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8BE99329132D5B004ACC33 /* AccountManager.swift */; };
 		FA8BE9A32913413D004ACC33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8BE9A22913413D004ACC33 /* AppDelegate.swift */; };
 		FA8BEA28291356C3004ACC33 /* SavedDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8BEA27291356C3004ACC33 /* SavedDataManager.swift */; };
@@ -36,8 +35,6 @@
 		D442C8041AF5A5D600FF5FF8 /* RustleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RustleTests.m; sourceTree = "<group>"; };
 		D4AFE1BA1AF74124004AD3DE /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
 		D4BD7FCD1AF9851900A515ED /* Rustle.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Rustle.xcdatamodel; sourceTree = "<group>"; };
-		D4BD7FD71AF9AD0800A515ED /* NSIndexPath+RustleExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSIndexPath+RustleExtensions.h"; sourceTree = "<group>"; };
-		D4BD7FD81AF9AD0800A515ED /* NSIndexPath+RustleExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSIndexPath+RustleExtensions.m"; sourceTree = "<group>"; };
 		FA8BE99229132D5A004ACC33 /* Rustle-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Rustle-Bridging-Header.h"; sourceTree = "<group>"; };
 		FA8BE99329132D5B004ACC33 /* AccountManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountManager.swift; sourceTree = "<group>"; };
 		FA8BE9A22913413D004ACC33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -143,8 +140,6 @@
 		D4BD7FD61AF9AC6700A515ED /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				D4BD7FD71AF9AD0800A515ED /* NSIndexPath+RustleExtensions.h */,
-				D4BD7FD81AF9AD0800A515ED /* NSIndexPath+RustleExtensions.m */,
 				FAAD69AB29149A61004F7732 /* ErrorExtensions.swift */,
 			);
 			path = Extensions;
@@ -257,7 +252,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4BD7FD91AF9AD0800A515ED /* NSIndexPath+RustleExtensions.m in Sources */,
 				FA8BEA28291356C3004ACC33 /* SavedDataManager.swift in Sources */,
 				FA8BE9A32913413D004ACC33 /* AppDelegate.swift in Sources */,
 				D4BD7FCE1AF9851900A515ED /* Rustle.xcdatamodeld in Sources */,
