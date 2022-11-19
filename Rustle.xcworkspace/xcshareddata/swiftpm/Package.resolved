@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "twift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/daneden/Twift",
+      "state" : {
+        "branch" : "main",
+        "revision" : "892a9e1be3346c036c1a6988b6cdfa0b14fa4b7d"
+      }
+    }
+  ],
+  "version" : 2
+}

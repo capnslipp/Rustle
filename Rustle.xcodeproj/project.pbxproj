@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,7 @@
 		FA8BEA28291356C3004ACC33 /* SavedDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8BEA27291356C3004ACC33 /* SavedDataManager.swift */; };
 		FA8BEA3029136D16004ACC33 /* TitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8BEA2F29136D16004ACC33 /* TitleViewController.swift */; };
 		FAAD69AC29149A61004F7732 /* ErrorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAD69AB29149A61004F7732 /* ErrorExtensions.swift */; };
+		FABCBD0829288A88006C9607 /* Twift in Frameworks */ = {isa = PBXBuildFile; productRef = FABCBD0729288A88006C9607 /* Twift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FABCBD0829288A88006C9607 /* Twift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,6 +133,9 @@
 			dependencies = (
 			);
 			name = Rustle;
+			packageProductDependencies = (
+				FABCBD0729288A88006C9607 /* Twift */,
+			);
 			productName = Rustle;
 			productReference = D442C7E31AF5A5D500FF5FF8 /* Rustle.app */;
 			productType = "com.apple.product-type.application";
@@ -160,6 +165,9 @@
 				Base,
 			);
 			mainGroup = D442C7DA1AF5A5D500FF5FF8;
+			packageReferences = (
+				FABCBD0629288A88006C9607 /* XCRemoteSwiftPackageReference "Twift" */,
+			);
 			productRefGroup = D442C7E41AF5A5D500FF5FF8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -308,7 +316,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = App/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_NAME = Rustle;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -322,7 +333,10 @@
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = App/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_NAME = Rustle;
 				SWIFT_VERSION = 5.0;
 			};
@@ -350,6 +364,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FABCBD0629288A88006C9607 /* XCRemoteSwiftPackageReference "Twift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/daneden/Twift";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FABCBD0729288A88006C9607 /* Twift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FABCBD0629288A88006C9607 /* XCRemoteSwiftPackageReference "Twift" */;
+			productName = Twift;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		D4BD7FCC1AF9851900A515ED /* Rustle.xcdatamodeld */ = {
