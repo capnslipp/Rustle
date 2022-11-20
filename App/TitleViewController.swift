@@ -2,7 +2,7 @@
 // @author: Slipp Douglas Thompson
 
 import UIKit
-import Accounts
+import Twift
 import os
 
 
@@ -19,7 +19,7 @@ let appName = "Rustle"
 
 // MARK: - Class
 
-class TitleViewController : UIViewController, UIPopoverPresentationControllerDelegate, UITableViewDataSource, UITableViewDelegate
+class TitleViewController : UIViewController
 {
 	enum Error : Swift.Error {
 		case nilStoryboardIDProperty(String, propertyName: String)
@@ -29,10 +29,16 @@ class TitleViewController : UIViewController, UIPopoverPresentationControllerDel
 	
 	
 	@IBOutlet var twitterLoginButton: UIButton!
+	@IBOutlet var twitterLogoutButton: UIButton!
 	
-	
-	private var _twitterAccountsForPopover: [ACAccount] = []
-	
+	@IBOutlet var loggedinStatusLabel: UILabel!
+	func updateLoggedinStatusLabel() {
+		if let twitterUsername = AccountManager.shared.twitterUser?.username {
+			loggedinStatusLabel.text = "Logged in as @\(twitterUsername)"
+		} else {
+			loggedinStatusLabel.text = "Logged in as @???"
+		}
+	}
 	
 	weak var twitterTable: UITableView! {
 		willSet {
@@ -47,40 +53,6 @@ class TitleViewController : UIViewController, UIPopoverPresentationControllerDel
 		}
 	}
 	
-	weak var twitterTableController: UITableViewController!
-	
-	var isTwitterPopoverActive: Bool {
-		// @warning: Assumption that if a `twitterTableController` instance is alive, the popover is being presented.
-		// 	We might be able to do better— but Storyboards seem to use `UIPopoverPresentationController` not `UIPopoverController`, and the former doesn't give us much info to work with.
-		return (twitterTableController != nil)
-	}
-	
-	private var _twitterPopoverSequeID: String? = nil
-	@IBInspectable var twitterPopoverSequeID: String {
-		get {
-			guard let value = _twitterPopoverSequeID else {
-				let propertyName = "twitterPopoverSequeID"
-				Error.nilStoryboardIDProperty("\(self)'s \(propertyName) must be set to prior to using the object.  You likely need to configure this in the storyboard under the \(type(of: self))'s User Defined Runtime Attributes.", propertyName: propertyName).trap()
-				return "" // never run
-			}
-			return value
-		}
-		set { _twitterPopoverSequeID = newValue }
-	}
-	
-	private var _twitterPopoverTableCellReuseID: String? = nil
-	@IBInspectable var twitterPopoverTableCellReuseID: String {
-		get {
-			guard let value = _twitterPopoverTableCellReuseID else {
-				let propertyName = "twitterPopoverTableCellReuseID"
-				Error.nilStoryboardIDProperty("\(self)'s \(propertyName) must be set to prior to using the object.  You likely need to configure this in the storyboard under the \(type(of: self))'s User Defined Runtime Attributes.", propertyName: propertyName).trap()
-				return "" // never run
-			}
-			return value
-		}
-		set { _twitterPopoverTableCellReuseID = newValue }
-	}
-	
 	
 	// MARK: UIViewController Aherence
 	
@@ -88,7 +60,22 @@ class TitleViewController : UIViewController, UIPopoverPresentationControllerDel
 	{
 		super.viewDidLoad()
 		
-		// @fillin: Do any additional setup after loading the view.
+		twitterLoginButton.isHidden = true
+		twitterLogoutButton.isHidden = true
+		loggedinStatusLabel.isHidden = true
+		
+		if !AccountManager.shared.isAuthenticated {
+			twitterLoginButton.isHidden = false
+		} else {
+			updateLoggedinStatusLabel()
+			loggedinStatusLabel.isHidden = false
+			
+			twitterLogoutButton.isHidden = false
+		}
+		
+		twitterLogoutButton.layer.borderWidth = 1.0
+		twitterLogoutButton.layer.borderColor = UIColor.tintColor.cgColor
+		twitterLogoutButton.layer.cornerRadius = 5
 	}
 	
 	override func didReceiveMemoryWarning()
@@ -103,54 +90,71 @@ class TitleViewController : UIViewController, UIPopoverPresentationControllerDel
 	
 	@IBAction func openTwitterLogin(_ sender: Any)
 	{
-		let accountStore = ACAccountStore()
-		let twitterAccountType = accountStore.accountType(withAccountTypeIdentifier: ACAccountTypeIdentifierTwitter)
-		
-		accountStore.requestAccessToAccounts(with: twitterAccountType,
-			options: nil,
-			completion: { (granted, error) in
-				DispatchQueue.main.sync{
-					if (!granted) {
-						self.presentTwitterAccessNotGrantedAlert()
-					}
-					else {
-						let twitterAccounts = accountStore.accounts(with: twitterAccountType) as! [ACAccount]
-						self.askForTwitterAcount(from: twitterAccounts)
-					}
-				}
-			}
-		)
-	}
-	
-	func askForTwitterAcount(from twitterAccounts: [ACAccount])
-	{
-		let accountCount = twitterAccounts.count
-		
-		if accountCount == 0 {
-			presentNoTwitterAccountsAlert()
-		}
-		else if accountCount == 1 {
-			initiateLogin(withAccount: twitterAccounts[0])
-		}
-		else { // accountCount ≥ 2
-			let twitterPopoverSequeID = self.twitterPopoverSequeID
+		Task{
+			twitterLoginButton.isEnabled = false
 			
-			let canPerformSeque = shouldPerformSegue(withIdentifier: twitterPopoverSequeID, sender: self)
-			if !canPerformSeque {
+			let success = await AccountManager.shared.authenticate()
+			guard success else {
+				twitterLoginButton.isEnabled = true
 				return
 			}
 			
-			_twitterAccountsForPopover = twitterAccounts // for later use by `tableView:numberOfRowsInSection:`, `tableView:cellForRowAtIndexPath:`, `tableView:didSelectRowAtIndexPath:`
+			twitterLoginButton.isHidden = true
 			
-			performSegue(withIdentifier: twitterPopoverSequeID, sender: self)
+			updateLoggedinStatusLabel()
+			loggedinStatusLabel.isHidden = false
+			
+			twitterLogoutButton.isEnabled = true
+			twitterLogoutButton.isHidden = false
 		}
 	}
 	
-	func initiateLogin(withAccount twitterAccount: ACAccount)
+	@IBAction func logoutOfTwitter(_ sender: Any)
 	{
-		logger.info("Using twitter account: \(twitterAccount)")
-		try! AccountManager.shared.authenticate(usingTwitterAccount: twitterAccount)
+		twitterLogoutButton.isEnabled = false
+		
+		let success = AccountManager.shared.deauthenticate()
+		guard success else {
+			twitterLogoutButton.isEnabled = true
+			return
+		}
+		
+		twitterLogoutButton.isHidden = true
+		loggedinStatusLabel.isHidden = true
+		
+		twitterLoginButton.isEnabled = true
+		twitterLoginButton.isHidden = false
 	}
+	
+	//func askForTwitterAcount(from twitterAccounts: [ACAccount])
+	//{
+	//	let accountCount = twitterAccounts.count
+	//	
+	//	if accountCount == 0 {
+	//		presentNoTwitterAccountsAlert()
+	//	}
+	//	else if accountCount == 1 {
+	//		initiateLogin(withAccount: twitterAccounts[0])
+	//	}
+	//	else { // accountCount ≥ 2
+	//		let twitterPopoverSequeID = self.twitterPopoverSequeID
+	//		
+	//		let canPerformSeque = shouldPerformSegue(withIdentifier: twitterPopoverSequeID, sender: self)
+	//		if !canPerformSeque {
+	//			return
+	//		}
+	//		
+	//		_twitterAccountsForPopover = twitterAccounts // for later use by `tableView:numberOfRowsInSection:`, `tableView:cellForRowAtIndexPath:`, `tableView:didSelectRowAtIndexPath:`
+	//		
+	//		performSegue(withIdentifier: twitterPopoverSequeID, sender: self)
+	//	}
+	//}
+	
+	//func initiateLogin(withAccount twitterAccount: ACAccount)
+	//{
+	//	logger.info("Using twitter account: \(twitterAccount)")
+	//	try! AccountManager.shared.authenticate(usingTwitterAccount: twitterAccount)
+	//}
 	
 	
 	// MARK: Alerts
@@ -188,129 +192,5 @@ class TitleViewController : UIViewController, UIPopoverPresentationControllerDel
 		))
 		
 		doPresentAlert()
-	}
-	
-	
-	// MARK: Navigation
-	
-	override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool
-	{
-		if identifier == self.twitterPopoverSequeID {
-			return !isTwitterPopoverActive
-		}
-		else {
-			return super.shouldPerformSegue(withIdentifier: identifier, sender: sender)
-		}
-	}
-	
-	override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-	{
-		if segue.identifier == twitterPopoverSequeID {
-			let destController = segue.destination as! UITableViewController
-			
-			let tableView = destController.tableView!
-			tableView.dataSource = self
-			tableView.delegate = self
-			
-			twitterTable = tableView
-			twitterTableController = destController
-		}
-	}
-	
-	
-	// MARK: KVO
-	
-	override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?)
-	{
-		guard let object = object else {
-			return
-		}
-		
-		if object as? UITableView == twitterTable && keyPath == "contentSize" {
-			let tableView = object as! UITableView
-			popoverTableView(tableView, didChangeContentSize: tableView.contentSize)
-		}
-	}
-	
-	
-	// MARK: Twitter-Popover UITableViewDataSource & UITableViewDelegate Responsibilities
-	
-	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
-	{
-		if tableView == self.twitterTable
-		{
-			switch (section) {
-				case 0:
-					return _twitterAccountsForPopover.count
-				
-				default:
-					return 0
-			}
-		}
-		
-		return 0
-	}
-	
-	func tableView( _ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
-	{
-		if tableView == self.twitterTable
-		{
-			let twitterAccounts = _twitterAccountsForPopover
-			
-			let innermostIndex = indexPath.last!
-			if innermostIndex >= twitterAccounts.count {
-				Error.outOfRangeInnermostIndexPath(indexPath: indexPath, varName: "twitterAccounts.count", varValue: twitterAccounts.count).trap()
-			}
-			
-			let twitterAccount = twitterAccounts[innermostIndex]
-			let tableCell = tableView.dequeueReusableCell(withIdentifier: self.twitterPopoverTableCellReuseID)!
-			tableCell.textLabel!.text = twitterAccount.accountDescription
-			
-			return tableCell
-		}
-		
-		Error.unknownTableView.trap()
-		return UITableViewCell() // never run
-	}
-	
-	func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath)
-	{
-		if tableView == self.twitterTable
-		{
-			let twitterAccounts = _twitterAccountsForPopover
-			
-			let innermostIndex = indexPath.last!
-			if innermostIndex >= twitterAccounts.count {
-				Error.outOfRangeInnermostIndexPath(indexPath: indexPath, varName: "twitterAccounts.count", varValue: twitterAccounts.count).trap()
-			}
-			
-			let twitterAccount = twitterAccounts[innermostIndex]
-			
-			self.twitterTableController.dismiss(animated: true)
-			self.twitterTableController = nil
-			self.twitterTable = nil
-			
-			initiateLogin(withAccount: twitterAccount)
-		}
-	}
-	
-	func popoverTableView(_ tableView: UITableView, didChangeContentSize contentSize: CGSize)
-	{
-		let tableViewController = self.twitterTableController!
-		
-		// size down the size of the rows
-		
-		let existingPreferredContentSize = tableViewController.preferredContentSize
-		if existingPreferredContentSize == contentSize {
-			return // prevents recursive-ish calls
-		}
-		
-		tableViewController.preferredContentSize = contentSize
-		
-		// disable scroll-ability unless the table's decently long
-		
-		let titleViewSize = self.view.bounds.size
-		let shouldBeScrollable = (contentSize.height > titleViewSize.height * 0.75) // if taller than 3/4s the height of the screen
-		tableView.isScrollEnabled = shouldBeScrollable
 	}
 }
