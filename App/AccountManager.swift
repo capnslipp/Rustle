@@ -103,30 +103,3 @@ extension AccountManager : CustomStringConvertible
 			">"
 	}
 }
-
-
-
-extension Set<TwiftUser.Field>
-{
-	static let all: Self = [
-		\.createdAt,
-		\.description,
-		\.entities,
-		\.location,
-		\.pinnedTweetId,
-		\.profileImageUrl,
-		\.protected,
-		\.publicMetrics,
-		\.url,
-		\.verified,
-		\.withheld
-	]
-}
-
-
-extension Set<TwiftOAuth2Scope>
-{
-	static var all: Self {
-		Self(TwiftOAuth2Scope.allCases)
-	}
-}

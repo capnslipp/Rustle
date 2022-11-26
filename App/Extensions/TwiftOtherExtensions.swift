@@ -15,3 +15,32 @@ import struct Twift.OAuth2User
 internal typealias TwiftOAuth2User = OAuth2User
 import enum Twift.OAuth2Scope
 internal typealias TwiftOAuth2Scope = OAuth2Scope
+
+
+
+// MARK: - Extensions
+
+extension Set<TwiftUser.Field>
+{
+	static let all: Self = [
+		\.createdAt,
+		\.description,
+		\.entities,
+		\.location,
+		\.pinnedTweetId,
+		\.profileImageUrl,
+		\.protected,
+		\.publicMetrics,
+		\.url,
+		\.verified,
+		\.withheld
+	]
+}
+
+
+extension Set<TwiftOAuth2Scope>
+{
+	static var all: Self {
+		Self(TwiftOAuth2Scope.allCases)
+	}
+}
