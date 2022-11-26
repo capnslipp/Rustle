@@ -11,6 +11,7 @@
 		D442C7F61AF5A5D600FF5FF8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D442C7F51AF5A5D600FF5FF8 /* Images.xcassets */; };
 		D442C7F91AF5A5D600FF5FF8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D442C7F71AF5A5D600FF5FF8 /* LaunchScreen.xib */; };
 		D4BD7FCE1AF9851900A515ED /* Rustle.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D4BD7FCC1AF9851900A515ED /* Rustle.xcdatamodeld */; };
+		FA58B61F2931FEA300001D83 /* RustleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D442C8041AF5A5D600FF5FF8 /* RustleTests.swift */; };
 		FA85CC20292B4A1100C0C008 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA85CC1F292B4A1100C0C008 /* GameViewController.swift */; };
 		FA8BE99429132D5B004ACC33 /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8BE99329132D5B004ACC33 /* AccountManager.swift */; };
 		FA8BE9A32913413D004ACC33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8BE9A22913413D004ACC33 /* AppDelegate.swift */; };
@@ -20,6 +21,16 @@
 		FABCBD0829288A88006C9607 /* Twift in Frameworks */ = {isa = PBXBuildFile; productRef = FABCBD0729288A88006C9607 /* Twift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		FA58B61A2931FE8300001D83 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D442C7DB1AF5A5D500FF5FF8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D442C7E21AF5A5D500FF5FF8;
+			remoteInfo = Rustle;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		D442C7E31AF5A5D500FF5FF8 /* Rustle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rustle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D442C7E71AF5A5D500FF5FF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -27,8 +38,9 @@
 		D442C7F51AF5A5D600FF5FF8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D442C7F81AF5A5D600FF5FF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		D442C8031AF5A5D600FF5FF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D442C8041AF5A5D600FF5FF8 /* RustleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RustleTests.m; sourceTree = "<group>"; };
+		D442C8041AF5A5D600FF5FF8 /* RustleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RustleTests.swift; sourceTree = "<group>"; };
 		D4BD7FCD1AF9851900A515ED /* Rustle.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Rustle.xcdatamodel; sourceTree = "<group>"; };
+		FA58B6162931FE8300001D83 /* RustleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RustleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA85CC1F292B4A1100C0C008 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		FA8BE99329132D5B004ACC33 /* AccountManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountManager.swift; sourceTree = "<group>"; };
 		FA8BE9A22913413D004ACC33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +55,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				FABCBD0829288A88006C9607 /* Twift in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA58B6132931FE8300001D83 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				D442C7E31AF5A5D500FF5FF8 /* Rustle.app */,
+				FA58B6162931FE8300001D83 /* RustleTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,7 +115,7 @@
 		D442C8011AF5A5D600FF5FF8 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				D442C8041AF5A5D600FF5FF8 /* RustleTests.m */,
+				D442C8041AF5A5D600FF5FF8 /* RustleTests.swift */,
 				D442C8021AF5A5D600FF5FF8 /* supporting files */,
 			);
 			path = Tests;
@@ -140,18 +160,41 @@
 			productReference = D442C7E31AF5A5D500FF5FF8 /* Rustle.app */;
 			productType = "com.apple.product-type.application";
 		};
+		FA58B6152931FE8300001D83 /* RustleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA58B61C2931FE8300001D83 /* Build configuration list for PBXNativeTarget "RustleTests" */;
+			buildPhases = (
+				FA58B6122931FE8300001D83 /* Sources */,
+				FA58B6132931FE8300001D83 /* Frameworks */,
+				FA58B6142931FE8300001D83 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FA58B61B2931FE8300001D83 /* PBXTargetDependency */,
+			);
+			name = RustleTests;
+			productName = RustleTests;
+			productReference = FA58B6162931FE8300001D83 /* RustleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		D442C7DB1AF5A5D500FF5FF8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1410;
 				LastUpgradeCheck = 1410;
 				ORGANIZATIONNAME = "Cap'n Slipp";
 				TargetAttributes = {
 					D442C7E21AF5A5D500FF5FF8 = {
 						CreatedOnToolsVersion = 6.3;
 						LastSwiftMigration = 1410;
+					};
+					FA58B6152931FE8300001D83 = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = D442C7E21AF5A5D500FF5FF8;
 					};
 				};
 			};
@@ -173,6 +216,7 @@
 			projectRoot = "";
 			targets = (
 				D442C7E21AF5A5D500FF5FF8 /* Rustle */,
+				FA58B6152931FE8300001D83 /* RustleTests */,
 			);
 		};
 /* End PBXProject section */
@@ -185,6 +229,13 @@
 				D442C7F91AF5A5D600FF5FF8 /* LaunchScreen.xib in Resources */,
 				D442C7F61AF5A5D600FF5FF8 /* Images.xcassets in Resources */,
 				D442C7F41AF5A5D600FF5FF8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA58B6142931FE8300001D83 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,7 +256,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FA58B6122931FE8300001D83 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA58B61F2931FEA300001D83 /* RustleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FA58B61B2931FE8300001D83 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D442C7E21AF5A5D500FF5FF8 /* Rustle */;
+			targetProxy = FA58B61A2931FE8300001D83 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		D442C7F21AF5A5D600FF5FF8 /* Main.storyboard */ = {
@@ -370,6 +437,65 @@
 			};
 			name = Release;
 		};
+		FA58B61D2931FE8300001D83 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = UQQE2H6P34;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.6bitt.RustleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Rustle.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Rustle";
+			};
+			name = Debug;
+		};
+		FA58B61E2931FE8300001D83 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UQQE2H6P34;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MARKETING_VERSION = 1.0;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.6bitt.RustleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Rustle.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Rustle";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -387,6 +513,15 @@
 			buildConfigurations = (
 				D442C8091AF5A5D600FF5FF8 /* Debug */,
 				D442C80A1AF5A5D600FF5FF8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA58B61C2931FE8300001D83 /* Build configuration list for PBXNativeTarget "RustleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA58B61D2931FE8300001D83 /* Debug */,
+				FA58B61E2931FE8300001D83 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
