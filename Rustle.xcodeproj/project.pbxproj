@@ -19,6 +19,8 @@
 		FA8BEA3029136D16004ACC33 /* TitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8BEA2F29136D16004ACC33 /* TitleViewController.swift */; };
 		FA9FB93B293212A7005CD963 /* TwiftClientExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9FB93A293212A7005CD963 /* TwiftClientExtensions.swift */; };
 		FA9FB93D2932150C005CD963 /* TwiftOtherExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9FB93C2932150C005CD963 /* TwiftOtherExtensions.swift */; };
+		FA9FB94C29321DC9005CD963 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9FB94829321DC9005CD963 /* Session.swift */; };
+		FA9FB94D29321DCA005CD963 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9FB94929321DC9005CD963 /* User.swift */; };
 		FAAD69AC29149A61004F7732 /* ErrorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAD69AB29149A61004F7732 /* ErrorExtensions.swift */; };
 		FABCBD0829288A88006C9607 /* Twift in Frameworks */ = {isa = PBXBuildFile; productRef = FABCBD0729288A88006C9607 /* Twift */; };
 /* End PBXBuildFile section */
@@ -50,7 +52,10 @@
 		FA8BEA2F29136D16004ACC33 /* TitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleViewController.swift; sourceTree = "<group>"; };
 		FA9FB93A293212A7005CD963 /* TwiftClientExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwiftClientExtensions.swift; sourceTree = "<group>"; };
 		FA9FB93C2932150C005CD963 /* TwiftOtherExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwiftOtherExtensions.swift; sourceTree = "<group>"; };
+		FA9FB94829321DC9005CD963 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		FA9FB94929321DC9005CD963 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FAAD69AB29149A61004F7732 /* ErrorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorExtensions.swift; sourceTree = "<group>"; };
+		FADDFEE12932263500EAD534 /* CoreDataGenerated */ = {isa = PBXFileReference; lastKnownFileType = text; name = CoreDataGenerated; path = "../../Intermediates.noindex/Rustle.build/Debug-iphonesimulator/Rustle.build/DerivedSources/CoreDataGenerated/Rustle"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +107,7 @@
 				D442C7F21AF5A5D600FF5FF8 /* Main.storyboard */,
 				FA8BEA27291356C3004ACC33 /* SavedDataManager.swift */,
 				FA8BEA2F29136D16004ACC33 /* TitleViewController.swift */,
+				FA9FB93E29321D3D005CD963 /* Models */,
 				D442C7E61AF5A5D500FF5FF8 /* supporting files */,
 			);
 			path = App;
@@ -141,6 +147,16 @@
 				FA9FB93C2932150C005CD963 /* TwiftOtherExtensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FA9FB93E29321D3D005CD963 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FA9FB94829321DC9005CD963 /* Session.swift */,
+				FA9FB94929321DC9005CD963 /* User.swift */,
+				FADDFEE12932263500EAD534 /* CoreDataGenerated */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,6 +270,7 @@
 			files = (
 				FA8BEA28291356C3004ACC33 /* SavedDataManager.swift in Sources */,
 				FA8BE9A32913413D004ACC33 /* AppDelegate.swift in Sources */,
+				FA9FB94D29321DCA005CD963 /* User.swift in Sources */,
 				FA9FB93D2932150C005CD963 /* TwiftOtherExtensions.swift in Sources */,
 				D4BD7FCE1AF9851900A515ED /* Rustle.xcdatamodeld in Sources */,
 				FA8BEA3029136D16004ACC33 /* TitleViewController.swift in Sources */,
@@ -261,6 +278,7 @@
 				FA8BE99429132D5B004ACC33 /* AccountManager.swift in Sources */,
 				FA9FB93B293212A7005CD963 /* TwiftClientExtensions.swift in Sources */,
 				FAAD69AC29149A61004F7732 /* ErrorExtensions.swift in Sources */,
+				FA9FB94C29321DC9005CD963 /* Session.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

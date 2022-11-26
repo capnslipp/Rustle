@@ -1,4 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15C50" minimumToolsVersion="Xcode 4.3">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21512" systemVersion="21G217" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Session" representedClassName="Session" syncable="YES" codeGenerationType="category">
+        <relationship name="user" maxCount="1" deletionRule="Nullify" destinationEntity="User"/>
+    </entity>
+    <entity name="User" representedClassName="User" syncable="YES" codeGenerationType="category">
+        <attribute name="twitterBio" optional="YES" attributeType="String" minValueString="1"/>
+        <attribute name="twitterID" attributeType="Integer 64" minValueString="1" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="twitterLocation" optional="YES" attributeType="String" minValueString="1"/>
+        <attribute name="twitterName" attributeType="String" minValueString="1"/>
+        <attribute name="twitterProfileImageURL" optional="YES" attributeType="URI" minValueString="1"/>
+        <attribute name="twitterUsername" attributeType="String" minValueString="1"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="twitterID"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
 </model>
