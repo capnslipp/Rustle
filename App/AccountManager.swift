@@ -3,6 +3,7 @@
 
 import Foundation
 import os
+import CoreData
 
 
 
@@ -38,6 +39,8 @@ class AccountManager
 	
 	public private(set) var twitterUser: TwiftUser?
 	
+	public private(set) var user: User?
+	
 	
 	private(set) var isAuthenticated: Bool = false
 	
@@ -61,9 +64,31 @@ class AccountManager
 			twitterUser = result.data
 		} catch {
 			logger.error("\(error.localizedDescription)")
+			return false
 		}
+		let twitterUser = twitterUser!
 		
-		// @todo: set up ivars using `twitterAccount`
+		// set up `user` vars using `twitterUser`
+		
+		let managedObjectContext: NSManagedObjectContext = SavedDataManager.shared.managedObjectContext
+		
+		let twitterUserID = Int64(twitterUser.id)!
+		user = User.find(byTwitterID: twitterUserID, inContext: managedObjectContext)
+		if user != nil {
+			logger.info("Found User with Twitter ID \(twitterUserID) in CoreData DB, and updated fields.")
+		} else {
+			logger.info("Creating new User with Twitter ID \(twitterUserID).")
+			user = User(context: managedObjectContext)
+			user!.twitterID = twitterUserID
+		}
+		let user = user!
+		user.twitterUsername = twitterUser.username
+		user.twitterName = twitterUser.name
+		user.twitterBio = twitterUser.description
+		user.twitterLocation = twitterUser.location
+		user.twitterProfileImageURL = twitterUser.profileImageUrlLarger
+		
+		try! SavedDataManager.shared.saveContext()
 		
 		return true
 	}
