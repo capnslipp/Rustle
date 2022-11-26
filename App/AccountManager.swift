@@ -2,7 +2,6 @@
 // @author: Slipp Douglas Thompson
 
 import Foundation
-import Twift
 import os
 
 
@@ -35,9 +34,9 @@ class AccountManager
 	
 	// MARK: Authentication
 	
-	private var _twiftClient: Twift?
+	private var _twiftClient: TwiftClient?
 	
-	public private(set) var twitterUser: User?
+	public private(set) var twitterUser: TwiftUser?
 	
 	
 	private(set) var isAuthenticated: Bool = false
@@ -50,7 +49,7 @@ class AccountManager
 		}
 		
 		do {
-			let twitterOAuthUser = try await Twift.Authentication().authenticateUser(clientId: AccountManager.TwitterClientID, redirectUri: AccountManager.TwitterCallbackURL,
+			let twitterOAuthUser = try await TwiftAuthentication().authenticateUser(clientId: AccountManager.TwitterClientID, redirectUri: AccountManager.TwitterCallbackURL,
 				scope: [ .tweetRead, .usersRead, .offlineAccess ]
 			)
 			
@@ -84,8 +83,8 @@ class AccountManager
 	}
 	
 	
-	private func updateTwiftClient(token: OAuth2User) async {
-		_twiftClient = await Twift(oauth2User: token, onTokenRefresh: { token in
+	private func updateTwiftClient(token: TwiftOAuth2User) async {
+		_twiftClient = await TwiftClient(oauth2User: token, onTokenRefresh: { token in
 			Task{
 				await self.updateTwiftClient(token: token)
 			}
@@ -107,7 +106,7 @@ extension AccountManager : CustomStringConvertible
 
 
 
-extension Set<User.Field>
+extension Set<TwiftUser.Field>
 {
 	static let all: Self = [
 		\.createdAt,
@@ -125,9 +124,9 @@ extension Set<User.Field>
 }
 
 
-extension Set<OAuth2Scope>
+extension Set<TwiftOAuth2Scope>
 {
 	static var all: Self {
-		Self(OAuth2Scope.allCases)
+		Self(TwiftOAuth2Scope.allCases)
 	}
 }

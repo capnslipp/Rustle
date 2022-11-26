@@ -17,6 +17,8 @@
 		FA8BE9A32913413D004ACC33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8BE9A22913413D004ACC33 /* AppDelegate.swift */; };
 		FA8BEA28291356C3004ACC33 /* SavedDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8BEA27291356C3004ACC33 /* SavedDataManager.swift */; };
 		FA8BEA3029136D16004ACC33 /* TitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8BEA2F29136D16004ACC33 /* TitleViewController.swift */; };
+		FA9FB93B293212A7005CD963 /* TwiftClientExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9FB93A293212A7005CD963 /* TwiftClientExtensions.swift */; };
+		FA9FB93D2932150C005CD963 /* TwiftOtherExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9FB93C2932150C005CD963 /* TwiftOtherExtensions.swift */; };
 		FAAD69AC29149A61004F7732 /* ErrorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAD69AB29149A61004F7732 /* ErrorExtensions.swift */; };
 		FABCBD0829288A88006C9607 /* Twift in Frameworks */ = {isa = PBXBuildFile; productRef = FABCBD0729288A88006C9607 /* Twift */; };
 /* End PBXBuildFile section */
@@ -46,6 +48,8 @@
 		FA8BE9A22913413D004ACC33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA8BEA27291356C3004ACC33 /* SavedDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedDataManager.swift; sourceTree = "<group>"; };
 		FA8BEA2F29136D16004ACC33 /* TitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleViewController.swift; sourceTree = "<group>"; };
+		FA9FB93A293212A7005CD963 /* TwiftClientExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwiftClientExtensions.swift; sourceTree = "<group>"; };
+		FA9FB93C2932150C005CD963 /* TwiftOtherExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwiftOtherExtensions.swift; sourceTree = "<group>"; };
 		FAAD69AB29149A61004F7732 /* ErrorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -133,6 +137,8 @@
 			isa = PBXGroup;
 			children = (
 				FAAD69AB29149A61004F7732 /* ErrorExtensions.swift */,
+				FA9FB93A293212A7005CD963 /* TwiftClientExtensions.swift */,
+				FA9FB93C2932150C005CD963 /* TwiftOtherExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -248,10 +254,12 @@
 			files = (
 				FA8BEA28291356C3004ACC33 /* SavedDataManager.swift in Sources */,
 				FA8BE9A32913413D004ACC33 /* AppDelegate.swift in Sources */,
+				FA9FB93D2932150C005CD963 /* TwiftOtherExtensions.swift in Sources */,
 				D4BD7FCE1AF9851900A515ED /* Rustle.xcdatamodeld in Sources */,
 				FA8BEA3029136D16004ACC33 /* TitleViewController.swift in Sources */,
 				FA85CC20292B4A1100C0C008 /* GameViewController.swift in Sources */,
 				FA8BE99429132D5B004ACC33 /* AccountManager.swift in Sources */,
+				FA9FB93B293212A7005CD963 /* TwiftClientExtensions.swift in Sources */,
 				FAAD69AC29149A61004F7732 /* ErrorExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
