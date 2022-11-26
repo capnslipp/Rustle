@@ -21,6 +21,8 @@ class SavedDataManager
 		case savingData(String, underlyingError: Swift.Error)
 	}
 	
+	private let documentsDirectory: URL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+	
 	
 	// MARK: Lifecycle
 	
@@ -82,7 +84,6 @@ class SavedDataManager
 	{
 		let newCoordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
 		
-		let documentsDirectory = (UIApplication.shared.delegate as! AppDelegate).documentsDirectory
 		let storeURL = documentsDirectory
 			.appendingPathComponent(Self.coreDataSQLiteExtensionlessFilename)
 			.appendingPathExtension("sqlite")

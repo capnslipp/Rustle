@@ -52,9 +52,4 @@ class AppDelegate : UIResponder, UIApplicationDelegate
 	func applicationWillTerminate(_ application: UIApplication)
 	{
 	}
-	
-	
-	// MARK: Public Utils
-	
-	let documentsDirectory: URL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last!
 }
