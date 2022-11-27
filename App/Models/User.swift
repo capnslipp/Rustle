@@ -13,6 +13,15 @@ import CoreData
 @objc(User)
 public class User : NSManagedObject
 {
+	// MARK: Find By `objectID`
+	
+	class func find(byObjectID objectID: NSManagedObjectID, inContext context: NSManagedObjectContext) -> User? {
+		return try? context.existingObject(with: objectID, User.self)
+	}
+	
+	
+	// MARK: Find By `twitterID`
+	
 	class func fetchRequest(byTwitterID twitterID: Int64) -> NSFetchRequest<User> {
 		let request = fetchRequest()
 		request.predicate = NSPredicate(format: "twitterID == %@", twitterID as NSNumber)
@@ -23,6 +32,8 @@ public class User : NSManagedObject
 		return try! context.fetch(fetchRequest(byTwitterID: twitterID)).first
 	}
 	
+	
+	// MARK: Create/Update Via TwiftUser
 	
 	static func create(fromTwiftUser twiftUser: TwiftUser, inContext context: NSManagedObjectContext) -> User
 	{
