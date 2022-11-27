@@ -87,10 +87,6 @@ class SavedDataManager
 		let storeURL = documentsDirectory
 			.appendingPathComponent(Self.coreDataSQLiteExtensionlessFilename)
 			.appendingPathExtension("sqlite")
-		guard UIApplication.shared.canOpenURL(storeURL) else {
-			let filename = URL(string: Self.coreDataSQLiteExtensionlessFilename)!.appendingPathExtension("sqlite")
-			throw Error.unableToOpenCoreDataDBFile("Unable to find app document with filename “\(filename)”.")
-		}
 		
 		do {
 			_ = try newCoordinator.addPersistentStore(type: .sqlite, configuration: nil, at: storeURL, options: nil)
