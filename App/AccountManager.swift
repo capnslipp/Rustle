@@ -90,6 +90,34 @@ class AccountManager
 		return session
 	}
 	
+	/// Restore the `Session` from the DB via a Session's `NSManagedObjectID`.
+	/// Useful for restoring at app lauch via a Session URI stored in UserDefaults.
+	func restoreSession(withObjectID objectID: NSManagedObjectID) -> Bool
+	{
+		guard session == nil else {
+			logger.error("\(self) already has a current session.  If trying to switch session or start authentication, you need to exit the session first.")
+			return false
+		}
+		
+		let success = (populateSession(withObjectID: objectID) != nil)
+		return success
+	}
+	
+	@discardableResult
+	func exitCurrentSession() -> Bool
+	{
+		guard session != nil else {
+			logger.error("\(self) doesn't currently have an active session.")
+			return false
+		}
+		
+		try! SavedDataManager.shared.saveContext()
+		
+		session = nil
+		
+		return true
+	}
+	
 	
 	// MARK: User & Client Vars
 	
