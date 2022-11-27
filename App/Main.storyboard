@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WN2-Bg-b0B">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Title View Controller-->
+        <scene sceneID="Qb1-5P-lgc">
+            <objects>
+                <viewController id="WN2-Bg-b0B" customClass="TitleViewController" customModule="Rustle" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GsD-uK-Jn0"/>
+                        <viewControllerLayoutGuide type="bottom" id="t4u-6C-FAl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="moi-1g-0As">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rustle" textAlignment="right" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PoG-lj-EDf">
+                                <rect key="frame" x="108" y="243.66666666666663" width="177" height="83"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="72"/>
+                                <color key="textColor" red="0.082361184059999995" green="0.3146144152" blue="0.12799377740000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trees don't care." textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="obY-ro-8lC">
+                                <rect key="frame" x="141.66666666666666" y="340.66666666666669" width="110" height="23"/>
+                                <fontDescription key="fontDescription" name="SnellRoundhand" family="Snell Roundhand" pointSize="18"/>
+                                <color key="textColor" red="0.10493468490000001" green="0.090723671019999994" blue="0.1024621949" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dPf-Qu-5DE">
+                                <rect key="frame" x="129.66666666666666" y="754" width="133.99999999999997" height="30"/>
+                                <state key="normal" title="Log in using Twitter">
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="openTwitterLogin:" destination="WN2-Bg-b0B" eventType="touchUpInside" id="I7j-rr-qhq"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Logged in as @jack" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mVC-m0-O6A" userLabel="Logged-in Status Label">
+                                <rect key="frame" x="130.33333333333331" y="716" width="132.33333333333331" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dmM-GL-DPQ" userLabel="(info)">
+                                <rect key="frame" x="369" y="794" width="16" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="16" id="Ans-fJ-3Jf"/>
+                                    <constraint firstAttribute="height" constant="16" id="Qq4-SF-1Jo"/>
+                                </constraints>
+                                <state key="normal">
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="88K-vl-H0n" userLabel="Twitter Logout Button">
+                                <rect key="frame" x="276.66666666666669" y="720" width="58.666666666666686" height="22"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
+                                <inset key="contentEdgeInsets" minX="-5" minY="-5" maxX="-5" maxY="-5"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Logout"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Log out" buttonSize="small">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="10"/>
+                                </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                        <color key="value" systemColor="tintColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="logoutOfTwitter:" destination="WN2-Bg-b0B" eventType="touchUpInside" id="oSc-wC-2HT"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="F26-ws-QtX"/>
+                        <color key="backgroundColor" red="0.97083753350000002" green="0.97527897360000004" blue="0.96254116300000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="PoG-lj-EDf" secondAttribute="centerX" id="1UH-M6-Q4C"/>
+                            <constraint firstItem="PoG-lj-EDf" firstAttribute="centerY" secondItem="moi-1g-0As" secondAttribute="bottom" multiplier="1/3" constant="1" id="60o-9o-d73"/>
+                            <constraint firstItem="mVC-m0-O6A" firstAttribute="centerX" secondItem="moi-1g-0As" secondAttribute="centerX" id="Dqc-Zh-soX"/>
+                            <constraint firstItem="88K-vl-H0n" firstAttribute="leading" secondItem="mVC-m0-O6A" secondAttribute="trailing" constant="14" id="F80-rb-e24"/>
+                            <constraint firstItem="t4u-6C-FAl" firstAttribute="top" secondItem="mVC-m0-O6A" secondAttribute="bottom" priority="750" constant="34" id="FNm-e1-edw"/>
+                            <constraint firstItem="t4u-6C-FAl" firstAttribute="top" secondItem="dmM-GL-DPQ" secondAttribute="bottom" constant="8" id="N8T-Bz-WZd"/>
+                            <constraint firstItem="mVC-m0-O6A" firstAttribute="height" secondItem="dPf-Qu-5DE" secondAttribute="height" id="Qnu-dJ-6aD"/>
+                            <constraint firstAttribute="centerX" secondItem="obY-ro-8lC" secondAttribute="centerX" id="Xix-qe-Cxj"/>
+                            <constraint firstAttribute="right" secondItem="dmM-GL-DPQ" secondAttribute="right" constant="8" id="d59-sr-A9h"/>
+                            <constraint firstItem="PoG-lj-EDf" firstAttribute="leading" secondItem="moi-1g-0As" secondAttribute="leading" constant="20" symbolic="YES" id="fke-t9-mYD"/>
+                            <constraint firstAttribute="centerX" secondItem="dPf-Qu-5DE" secondAttribute="centerX" id="hTE-sH-5iM"/>
+                            <constraint firstItem="obY-ro-8lC" firstAttribute="top" secondItem="PoG-lj-EDf" secondAttribute="bottom" constant="14" id="l3w-Wm-5NR"/>
+                            <constraint firstAttribute="bottom" secondItem="dmM-GL-DPQ" secondAttribute="bottom" constant="8" id="p2O-gC-MgD"/>
+                            <constraint firstItem="dPf-Qu-5DE" firstAttribute="top" secondItem="mVC-m0-O6A" secondAttribute="bottom" constant="8" symbolic="YES" placeholder="YES" id="qdL-cW-cpV"/>
+                            <constraint firstItem="88K-vl-H0n" firstAttribute="centerY" secondItem="mVC-m0-O6A" secondAttribute="centerY" id="s8K-zl-3jv"/>
+                            <constraint firstItem="t4u-6C-FAl" firstAttribute="top" secondItem="dPf-Qu-5DE" secondAttribute="bottom" constant="34" id="zdb-OV-ApS"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="fke-t9-mYD"/>
+                                <exclude reference="p2O-gC-MgD"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="loggedinStatusLabel" destination="mVC-m0-O6A" id="42x-nL-JEE"/>
+                        <outlet property="twitterLoginButton" destination="dPf-Qu-5DE" id="bPk-Vp-lbi"/>
+                        <outlet property="twitterLogoutButton" destination="88K-vl-H0n" id="xLI-k7-9p1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wFh-w5-F62" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="676.875" y="-433.0985915492958"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

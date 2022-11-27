@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D442C7F41AF5A5D600FF5FF8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D442C7F21AF5A5D600FF5FF8 /* Main.storyboard */; };
 		D442C7F61AF5A5D600FF5FF8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D442C7F51AF5A5D600FF5FF8 /* Images.xcassets */; };
 		D442C7F91AF5A5D600FF5FF8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D442C7F71AF5A5D600FF5FF8 /* LaunchScreen.xib */; };
 		D4BD7FCE1AF9851900A515ED /* Rustle.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D4BD7FCC1AF9851900A515ED /* Rustle.xcdatamodeld */; };
@@ -19,6 +18,7 @@
 		FA8BE9A32913413D004ACC33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8BE9A22913413D004ACC33 /* AppDelegate.swift */; };
 		FA8BEA28291356C3004ACC33 /* SavedDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8BEA27291356C3004ACC33 /* SavedDataManager.swift */; };
 		FA8BEA3029136D16004ACC33 /* TitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8BEA2F29136D16004ACC33 /* TitleViewController.swift */; };
+		FA9148422933770600725203 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA9148412933770600725203 /* Main.storyboard */; };
 		FA9FB93B293212A7005CD963 /* TwiftClientExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9FB93A293212A7005CD963 /* TwiftClientExtensions.swift */; };
 		FA9FB93D2932150C005CD963 /* TwiftOtherExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9FB93C2932150C005CD963 /* TwiftOtherExtensions.swift */; };
 		FA9FB94C29321DC9005CD963 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9FB94829321DC9005CD963 /* Session.swift */; };
@@ -40,7 +40,6 @@
 /* Begin PBXFileReference section */
 		D442C7E31AF5A5D500FF5FF8 /* Rustle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rustle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D442C7E71AF5A5D500FF5FF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D442C7F31AF5A5D600FF5FF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D442C7F51AF5A5D600FF5FF8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D442C7F81AF5A5D600FF5FF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		D442C8031AF5A5D600FF5FF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -53,6 +52,7 @@
 		FA8BE9A22913413D004ACC33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA8BEA27291356C3004ACC33 /* SavedDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedDataManager.swift; sourceTree = "<group>"; };
 		FA8BEA2F29136D16004ACC33 /* TitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleViewController.swift; sourceTree = "<group>"; };
+		FA9148412933770600725203 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		FA9FB93A293212A7005CD963 /* TwiftClientExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwiftClientExtensions.swift; sourceTree = "<group>"; };
 		FA9FB93C2932150C005CD963 /* TwiftOtherExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwiftOtherExtensions.swift; sourceTree = "<group>"; };
 		FA9FB94829321DC9005CD963 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
@@ -108,7 +108,7 @@
 				D4BD7FCC1AF9851900A515ED /* Rustle.xcdatamodeld */,
 				D442C7F51AF5A5D600FF5FF8 /* Images.xcassets */,
 				D442C7F71AF5A5D600FF5FF8 /* LaunchScreen.xib */,
-				D442C7F21AF5A5D600FF5FF8 /* Main.storyboard */,
+				FA9148412933770600725203 /* Main.storyboard */,
 				FA8BEA27291356C3004ACC33 /* SavedDataManager.swift */,
 				FA8BEA2F29136D16004ACC33 /* TitleViewController.swift */,
 				FA9FB93E29321D3D005CD963 /* Models */,
@@ -257,7 +257,7 @@
 			files = (
 				D442C7F91AF5A5D600FF5FF8 /* LaunchScreen.xib in Resources */,
 				D442C7F61AF5A5D600FF5FF8 /* Images.xcassets in Resources */,
-				D442C7F41AF5A5D600FF5FF8 /* Main.storyboard in Resources */,
+				FA9148422933770600725203 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,14 +309,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		D442C7F21AF5A5D600FF5FF8 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D442C7F31AF5A5D600FF5FF8 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		D442C7F71AF5A5D600FF5FF8 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
