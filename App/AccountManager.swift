@@ -4,6 +4,7 @@
 import Foundation
 import os
 import CoreData
+import With
 
 
 
@@ -31,6 +32,62 @@ class AccountManager
 	
 	init()
 	{
+	}
+	
+	
+	// MARK: Session Var
+	
+	private var _session: Session?
+	private(set) var session: Session? {
+		get { _session }
+		set {
+			_session = newValue
+			user = _session?.user
+		}
+	}
+	
+	@discardableResult
+	private func populateSessionViaUser() throws -> Session?
+	{
+		guard let user = user else {
+			// If there's no `User`, we can't do anything to find/create/update a `Session`, so return `nil` to signify populate failed.
+			return nil
+		}
+		
+		let managedObjectContext: NSManagedObjectContext = SavedDataManager.shared.managedObjectContext
+		
+		// Attempt to find an existing `Session` in the DB
+		session = Session.find(byUserTwitterID: user.twitterID, inContext: managedObjectContext)
+		
+		if session != nil {
+			logger.info("Found Session with Twitter ID \(user.twitterID) in CoreData DB.")
+		}
+		else {
+			// Create a `Session` based on the `User`
+			logger.info("Creating new Session with User#\(user.objectID).")
+			session = with(Session(context: managedObjectContext)) { s in
+				s.user = user
+			}
+		}
+		
+		if session!.hasChanges {
+			try SavedDataManager.shared.saveContext()
+		}
+		return session
+	}
+	
+	@discardableResult
+	private func populateSession(withObjectID objectID: NSManagedObjectID) -> Session?
+	{
+		let managedObjectContext: NSManagedObjectContext = SavedDataManager.shared.managedObjectContext
+		
+		// Attempt to find an existing `Session` in the DB
+		session = Session.find(byObjectID: objectID, inContext: managedObjectContext)
+		if session != nil {
+			logger.info("Found Session with objectID \(objectID) in CoreData DB.")
+		}
+		
+		return session
 	}
 	
 	
@@ -108,6 +165,10 @@ class AccountManager
 			logger.error("\(self) is already authenticated.  If trying to change the authentication, you need to deauthenticate first.")
 			return false
 		}
+		guard session == nil else {
+			logger.error("\(self) already has a current session.  If trying to switch session or start authentication, you need to exit the session first.")
+			return false
+		}
 		
 		do {
 			let twitterOAuthUser = try await TwiftAuthentication().authenticateUser(clientId: AccountManager.TwitterClientID, redirectUri: AccountManager.TwitterCallbackURL,
@@ -120,24 +181,28 @@ class AccountManager
 			
 			let result = try await twiftClient.getMe(fields: .all.subtracting([ \.pinnedTweetId ]))
 			twitterUser = result.data
+			
+			let sessionSuccess = (try populateSessionViaUser() != nil)
+			return sessionSuccess
 		} catch {
 			logger.error("\(error.localizedDescription)")
 			return false
 		}
-		
-		return true
 	}
 	
+	@discardableResult
 	func deauthenticate() -> Bool
 	{
 		guard isAuthenticated else {
 			logger.error("\(self) isn't currently authenticated.")
 			return false
 		}
+		isAuthenticated = false
 		
+		session = nil
+		user = nil
 		twitterUser = nil
 		_twiftClient = nil
-		isAuthenticated = false
 		
 		return true
 	}
