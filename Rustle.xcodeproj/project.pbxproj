@@ -11,6 +11,7 @@
 		D442C7F61AF5A5D600FF5FF8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D442C7F51AF5A5D600FF5FF8 /* Images.xcassets */; };
 		D442C7F91AF5A5D600FF5FF8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D442C7F71AF5A5D600FF5FF8 /* LaunchScreen.xib */; };
 		D4BD7FCE1AF9851900A515ED /* Rustle.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D4BD7FCC1AF9851900A515ED /* Rustle.xcdatamodeld */; };
+		FA02915129332D99005B9903 /* With in Frameworks */ = {isa = PBXBuildFile; productRef = FA02915029332D99005B9903 /* With */; };
 		FA58B61F2931FEA300001D83 /* RustleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D442C8041AF5A5D600FF5FF8 /* RustleTests.swift */; };
 		FA85CC20292B4A1100C0C008 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA85CC1F292B4A1100C0C008 /* GameViewController.swift */; };
 		FA8BE99429132D5B004ACC33 /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8BE99329132D5B004ACC33 /* AccountManager.swift */; };
@@ -63,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA02915129332D99005B9903 /* With in Frameworks */,
 				FABCBD0829288A88006C9607 /* Twift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -177,6 +179,7 @@
 			name = Rustle;
 			packageProductDependencies = (
 				FABCBD0729288A88006C9607 /* Twift */,
+				FA02915029332D99005B9903 /* With */,
 			);
 			productName = Rustle;
 			productReference = D442C7E31AF5A5D500FF5FF8 /* Rustle.app */;
@@ -232,6 +235,7 @@
 			mainGroup = D442C7DA1AF5A5D500FF5FF8;
 			packageReferences = (
 				FABCBD0629288A88006C9607 /* XCRemoteSwiftPackageReference "Twift" */,
+				FA02914F29332D99005B9903 /* XCRemoteSwiftPackageReference "With" */,
 			);
 			productRefGroup = D442C7E41AF5A5D500FF5FF8 /* Products */;
 			projectDirPath = "";
@@ -555,6 +559,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		FA02914F29332D99005B9903 /* XCRemoteSwiftPackageReference "With" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/capnslipp/With";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		FABCBD0629288A88006C9607 /* XCRemoteSwiftPackageReference "Twift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/daneden/Twift";
@@ -566,6 +578,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		FA02915029332D99005B9903 /* With */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA02914F29332D99005B9903 /* XCRemoteSwiftPackageReference "With" */;
+			productName = With;
+		};
 		FABCBD0729288A88006C9607 /* Twift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = FABCBD0629288A88006C9607 /* XCRemoteSwiftPackageReference "Twift" */;

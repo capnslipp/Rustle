@@ -8,6 +8,15 @@
         "branch" : "main",
         "revision" : "892a9e1be3346c036c1a6988b6cdfa0b14fa4b7d"
       }
+    },
+    {
+      "identity" : "with",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/capnslipp/With",
+      "state" : {
+        "branch" : "master",
+        "revision" : "eff260b8526335d7dc43bc1ab4633ab110a7e434"
+      }
     }
   ],
   "version" : 2
