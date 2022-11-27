@@ -22,4 +22,23 @@ public class User : NSManagedObject
 	class func find(byTwitterID twitterID: Int64, inContext context: NSManagedObjectContext) -> User? {
 		return try! context.fetch(fetchRequest(byTwitterID: twitterID)).first
 	}
+	
+	
+	static func create(fromTwiftUser twiftUser: TwiftUser, inContext context: NSManagedObjectContext) -> User
+	{
+		let user = User(context: context)
+		user.update(fromTwiftUser: twiftUser, inContext: context)
+		return user
+	}
+	
+	
+	func update(fromTwiftUser twiftUser: TwiftUser, inContext context: NSManagedObjectContext)
+	{
+		twitterID = Int64(twiftUser.id)!
+		twitterUsername = twiftUser.username
+		twitterName = twiftUser.name
+		twitterBio = twiftUser.description
+		twitterLocation = twiftUser.location
+		twitterProfileImageURL = twiftUser.profileImageUrlLarger
+	}
 }

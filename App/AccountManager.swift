@@ -15,6 +15,7 @@ class AccountManager
 {
 	enum Error : Swift.Error {
 		case accountTypeNotTwitter(String)
+		case userAndTwitterUserAreDifferentTwitterAccounts(String)
 	}
 	
 	
@@ -33,14 +34,71 @@ class AccountManager
 	}
 	
 	
-	// MARK: Authentication
+	// MARK: User & Client Vars
 	
 	private var _twiftClient: TwiftClient?
 	
-	public private(set) var twitterUser: TwiftUser?
+	private(set) var twitterUser: TwiftUser?
 	
-	public private(set) var user: User?
+	private var _user: User?
+	private(set) var user: User? {
+		get {
+			try! populateUser()
+			return _user
+		}
+		set {
+			_user = newValue
+			if _user == nil {
+				twitterUser = nil // prevent recreation of `_user` by `populateUser()`
+			}
+		}
+	}
 	
+	@discardableResult
+	private func populateUser() throws -> User?
+	{
+		guard let twitterUser = twitterUser else {
+			// If there's no `TwiftUser`, we can't do anything to find/create/update a `User`, so return `nil` to signify populate failed.
+			return nil
+		}
+		
+		let managedObjectContext: NSManagedObjectContext = SavedDataManager.shared.managedObjectContext
+		
+		if let user = _user {
+			// Update the `User` from the `TwiftUser`
+			
+			guard String(user.twitterID) == twitterUser.id else {
+				throw Error.userAndTwitterUserAreDifferentTwitterAccounts("Unexpectedly, the `User` and `TwiftUser` reference different twitter accounts (User: twitter ID \(user.twitterID); TwiftUser: twitter ID \(twitterUser.id).")
+			}
+			
+			user.update(fromTwiftUser: twitterUser, inContext: managedObjectContext)
+		}
+		else { // _user == nil
+			let twitterUserID = Int64(twitterUser.id)!
+			
+			// Attempt to find an existing `User` in the DB
+			_user = User.find(byTwitterID: twitterUserID, inContext: managedObjectContext)
+			
+			if _user != nil {
+				// Update the found `User` based on the `TwiftUser`
+				logger.info("Found User with Twitter ID \(twitterUserID) in CoreData DB, and updated fields.")
+				_user!.update(fromTwiftUser: twitterUser, inContext: managedObjectContext)
+			}
+			else {
+				// Create a `User` based on the `TwiftUser`
+				logger.info("Creating new User with Twitter ID \(twitterUserID).")
+				_user = User.create(fromTwiftUser: twitterUser, inContext: managedObjectContext)
+			}
+		}
+		
+		if _user!.hasChanges {
+			try SavedDataManager.shared.saveContext()
+		}
+		return _user
+	}
+	
+	
+	// MARK: Authentication
 	
 	private(set) var isAuthenticated: Bool = false
 	
@@ -66,29 +124,6 @@ class AccountManager
 			logger.error("\(error.localizedDescription)")
 			return false
 		}
-		let twitterUser = twitterUser!
-		
-		// set up `user` vars using `twitterUser`
-		
-		let managedObjectContext: NSManagedObjectContext = SavedDataManager.shared.managedObjectContext
-		
-		let twitterUserID = Int64(twitterUser.id)!
-		user = User.find(byTwitterID: twitterUserID, inContext: managedObjectContext)
-		if user != nil {
-			logger.info("Found User with Twitter ID \(twitterUserID) in CoreData DB, and updated fields.")
-		} else {
-			logger.info("Creating new User with Twitter ID \(twitterUserID).")
-			user = User(context: managedObjectContext)
-			user!.twitterID = twitterUserID
-		}
-		let user = user!
-		user.twitterUsername = twitterUser.username
-		user.twitterName = twitterUser.name
-		user.twitterBio = twitterUser.description
-		user.twitterLocation = twitterUser.location
-		user.twitterProfileImageURL = twitterUser.profileImageUrlLarger
-		
-		try! SavedDataManager.shared.saveContext()
 		
 		return true
 	}
