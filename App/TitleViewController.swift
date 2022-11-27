@@ -33,7 +33,7 @@ class TitleViewController : UIViewController
 	
 	@IBOutlet var loggedinStatusLabel: UILabel!
 	func updateLoggedinStatusLabel() {
-		if let twitterUsername = AccountManager.shared.twitterUser?.username {
+		if let twitterUsername = AccountManager.shared.user?.twitterUsername {
 			loggedinStatusLabel.text = "Logged in as @\(twitterUsername)"
 		} else {
 			loggedinStatusLabel.text = "Logged in as @???"
@@ -64,13 +64,13 @@ class TitleViewController : UIViewController
 		twitterLogoutButton.isHidden = true
 		loggedinStatusLabel.isHidden = true
 		
-		if !AccountManager.shared.isAuthenticated {
-			twitterLoginButton.isHidden = false
-		} else {
+		if let user = AccountManager.shared.user {
 			updateLoggedinStatusLabel()
 			loggedinStatusLabel.isHidden = false
 			
 			twitterLogoutButton.isHidden = false
+		} else {
+			twitterLoginButton.isHidden = false
 		}
 		
 		twitterLogoutButton.layer.borderWidth = 1.0
@@ -113,11 +113,11 @@ class TitleViewController : UIViewController
 	{
 		twitterLogoutButton.isEnabled = false
 		
-		let success = AccountManager.shared.deauthenticate()
-		guard success else {
-			twitterLogoutButton.isEnabled = true
-			return
+		let accountMan = AccountManager.shared
+		if accountMan.isAuthenticated {
+			accountMan.deauthenticate()
 		}
+		accountMan.exitCurrentSession()
 		
 		twitterLogoutButton.isHidden = true
 		loggedinStatusLabel.isHidden = true
