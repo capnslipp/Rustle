@@ -11,7 +11,6 @@
 		FA02915129332D99005B9903 /* With in Frameworks */ = {isa = PBXBuildFile; productRef = FA02915029332D99005B9903 /* With */; };
 		FA029155293342EA005B9903 /* NSManagedObjectContextExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA029154293342EA005B9903 /* NSManagedObjectContextExtensions.swift */; };
 		FA58B61F2931FEA300001D83 /* RustleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D442C8041AF5A5D600FF5FF8 /* RustleTests.swift */; };
-		FA85CC20292B4A1100C0C008 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA85CC1F292B4A1100C0C008 /* GameViewController.swift */; };
 		FA8BE99429132D5B004ACC33 /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8BE99329132D5B004ACC33 /* AccountManager.swift */; };
 		FA8BE9A32913413D004ACC33 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8BE9A22913413D004ACC33 /* AppDelegate.swift */; };
 		FA8BEA28291356C3004ACC33 /* SavedDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8BEA27291356C3004ACC33 /* SavedDataManager.swift */; };
@@ -45,7 +44,6 @@
 		D4BD7FCD1AF9851900A515ED /* Rustle.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Rustle.xcdatamodel; sourceTree = "<group>"; };
 		FA029154293342EA005B9903 /* NSManagedObjectContextExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSManagedObjectContextExtensions.swift; sourceTree = "<group>"; };
 		FA58B6162931FE8300001D83 /* RustleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RustleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FA85CC1F292B4A1100C0C008 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		FA8BE99329132D5B004ACC33 /* AccountManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountManager.swift; sourceTree = "<group>"; };
 		FA8BE9A22913413D004ACC33 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA8BEA27291356C3004ACC33 /* SavedDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedDataManager.swift; sourceTree = "<group>"; };
@@ -104,7 +102,6 @@
 			children = (
 				FA8BE99329132D5B004ACC33 /* AccountManager.swift */,
 				FA8BE9A22913413D004ACC33 /* AppDelegate.swift */,
-				FA85CC1F292B4A1100C0C008 /* GameViewController.swift */,
 				D4BD7FCC1AF9851900A515ED /* Rustle.xcdatamodeld */,
 				FA914845293379C500725203 /* Assets.xcassets */,
 				FA9148412933770600725203 /* Main.storyboard */,
@@ -282,7 +279,6 @@
 				FA9FB93D2932150C005CD963 /* TwiftOtherExtensions.swift in Sources */,
 				D4BD7FCE1AF9851900A515ED /* Rustle.xcdatamodeld in Sources */,
 				FA8BEA3029136D16004ACC33 /* TitleViewController.swift in Sources */,
-				FA85CC20292B4A1100C0C008 /* GameViewController.swift in Sources */,
 				FA8BE99429132D5B004ACC33 /* AccountManager.swift in Sources */,
 				FA9FB93B293212A7005CD963 /* TwiftClientExtensions.swift in Sources */,
 				FAAD69AC29149A61004F7732 /* ErrorExtensions.swift in Sources */,
